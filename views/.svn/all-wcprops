@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/connetos/!svn/ver/2394/trunk/website/views/base
+END
+footer.html
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/connetos/!svn/ver/2358/trunk/website/views/base/footer.html
+END
+head.html
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/connetos/!svn/ver/2394/trunk/website/views/base/head.html
+END
+banner.html
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/connetos/!svn/ver/2358/trunk/website/views/base/banner.html
+END
+navbar.html
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/connetos/!svn/ver/2358/trunk/website/views/base/navbar.html
+END
+base.html
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/connetos/!svn/ver/2358/trunk/website/views/base/base.html
+END

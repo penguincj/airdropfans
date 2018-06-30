@@ -1,0 +1,95 @@
+<footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <br>
+                    <p>© 2017 YUNQI Tech.</p>
+                    <br>
+                    <p> 开放网络领导者</p>
+                </div>
+                <div class="col-md-2">
+                    <h class="nav-header">购买服务</h>
+                    <ul>
+                        <li><a href="/about/contact">请求报价</a></li>
+                        <li><a href="/about/contact">购买方法</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h class="nav-header">媒体资讯</h>
+                    <ul>
+                        <li><a href="/blog/">新闻精选</a></li>
+                        <li><a href="/blog/">行业资讯</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h class="nav-header">关于公司</h>
+                    <ul>
+                        <li><a href="/about">云启概况</a></li>
+                        <li><a href="/about/recruit">招贤纳士</a></li>
+                        <li><a href="/about/contact">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                  <div class="row row-img">
+                    <div class="col-md-2 col-xs-12">
+                      <img class="dimension" src="/static/img/yunqi_weixin.jpeg">
+                    </div>
+                    <div class="col-md-2 col-xs-4">
+                      <a href="#"><img class="footerweixin" src="/static/img/weixin.svg"></a>
+                    </div>
+                    <div class="col-md-2 col-xs-4">
+                      <a href="http://weibo.com/u/6204103355?refer_flag=1001030101_"><img src="/static/img/weibo.svg"></a>
+                    </div>
+                    <div class="col-md-2 col-xs-4">
+                      <a href="https://github.com/connetos?tab=repositories"><img src="/static/img/github.svg"></a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <hr/>
+    <div class="remarks">
+        <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-xs-12">
+              <p>Copyright © 2017, YUNQI Tech Co., Ltd. All Rights Reserved. 北京云启志新科技股份有限公司</p>
+              </div>
+              <div class="col-md-1 col-xs-2"><a href="#">法律声明</a></div>
+              <div class="col-md-1 col-xs-2"><a href="#">隐私条款</a></div>
+              <div class="col-md-1 col-xs-2nm"><a href="#">开发者中心</a></div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-1 col-xs-3"><a href="#">京ICP备</a></div>
+              <div class="col-md-1 col-xs-3"><a href="#">京ICP证</a></div>
+              <div class="col-md-1 col-xs-3"><a href="#">京公网安备</a></div>
+          </div>
+    </div>
+
+    <div id="goToTop">
+        <a href="#"><img src="/static/img/arrow_up_e06a918c6b.png"></a>
+    </div>
+
+        <script src="https://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+        <!-- Modernizr javascript -->
+        <script src="https://cdn.bootcss.com/modernizr/2.8.3/modernizr.min.js"></script>
+
+        <!-- Isotope javascript -->
+        <script src="https://cdn.bootcss.com/jquery.isotope/3.0.4/isotope.pkgd.min.js"></script>
+
+        <!-- Backstretch javascript -->
+        <script src="https://cdn.bootcss.com/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+
+        <!-- Appear javascript -->
+        <script src="https://cdn.bootcss.com/jquery.appear/0.3.3/jquery.appear.min.js"></script>
+
+        <!-- Initialization of Plugins -->
+        <script type="text/javascript" src="/static/js/template.js"></script>
+
+        <!-- Custom Scripts -->
+         <script type="text/javascript" src="/static/js/custom.js"></script>
+

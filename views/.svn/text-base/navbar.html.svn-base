@@ -1,0 +1,80 @@
+<nav class="header fixed navbar navbar-fixed-top" {{if .IsBlack}} style="background-color:black;"{{end}}>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-xs-3">
+                <div class="header-left clearfix">
+                    <!-- logo -->
+                    <div class="logo smooth-scroll">
+                        <a href="http://www.connetos.com"><img id="logo" src="/static/img/favicon.ico" alt="YUNQI"></a>
+                    </div>
+                    <!-- name-and-slogan -->
+                    <div class="site-name-and-slogan smooth-scroll">
+                        <div class="site-name"><a href="http://www.connetos.com"><font size=4px>YUNQI</font></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 col-xs-9">
+                <!-- header-right start -->
+                <div class="header-right clearfix">
+                    <!-- main-navigation start -->
+                    <div class="main-navigation animated">
+                        <!-- navbar start -->
+                        <nav class="navbar navbar-default" role="navigation">
+                            <div class="container-fluid">
+                                <!-- Toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="glyphicon glyphicon-align-justify" data-toggle="collapse" data-target="#navbar-collapse-1">
+                                      <button type="button" class="glyphicon glyphicon-remove" data-toggle="collapse" data-target="#navbar-collapse-1">
+                                      <span class="sr-only">Toggle navigation</span>
+                                      <span class="icon-bar"></span>
+                                      <span class="icon-bar"></span>
+                                      <span class="icon-bar"></span>
+                                  </button>
+                              </div>
+                              <div class="collapse navbar-collapse tab-megamenu" id="navbar-collapse-1">
+                                  <ul class="nav navbar-nav navbar-right">
+                                    <li {{if .IsHome}}class="active"{{end}}><a href="/">开放网络</a></li>
+                                    <li {{if .IsProduct}}class="active dropdown li2"{{else}}class="dropdown li2"{{end}}>
+                                      <a href="" class=" dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">技术产品<sapn class="glyphicon glyphicon-chevron-right glyphicon-one"></sapn><sapn class="glyphicon glyphicon-chevron-down glyphicon-two"></sapn></a>
+                                        <ul class="dropdown-menu ul2">
+                                            <li class="li-on"></li>
+                                            <li><a href="/product/connetos">ConnetOS</a></li>
+                                            <li><a href="/product/connetos-express">ConnetOS Express</a></li>
+                                        </ul>
+                                      </li>
+                                      <li {{if .IsSolution}}class="active dropdown li3"{{else}}class="dropdown li3"{{end}}>
+                                        <a href="" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">解决方案<sapn class="glyphicon glyphicon-chevron-right glyphicon-three"></sapn><sapn class="glyphicon glyphicon-chevron-down glyphicon-four"></sapn></a>
+                                            <ul class="dropdown-menu ul3">
+                                              <li class="li-on"></li>
+                                              <li><a href="/solution/atp">自动部署</a></li>
+                                              <li><a href="/solution/tap">TAP分流</a></li>
+                                              <li><a href="/solution/zabbix-monitor">网络可视化</a></li>
+                                              <li><a href="/solution/cdn-ecmp">CDN负载均衡</a></li>
+                                              <li><a href="/solution/diagnose">诊断与分析</a></li>
+                                              <li><a href="/solution/high-reliability">高可靠网络</a></li>
+                                          </ul>
+                                      </li>
+                                      <li {{if .IsAppStore}}class="active"{{end}}><a href="/app-store">软件商店</a></li>
+                                      <li {{if .IsSupport}}class="active dropdown li1"{{else}}class="dropdown li1"{{end}}>
+                                        <a href="" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">技术支持<sapn class="glyphicon glyphicon-chevron-right glyphicon-five"></sapn><sapn class="glyphicon glyphicon-chevron-down glyphicon-six"></sapn></a>
+                                            <ul class="dropdown-menu ul1">
+                                              <li class="li-on"></li>
+                                              <li><a href="http://connetos.readthedocs.io/">文档中心</a></li>
+                                              <li><a href="/app-store">软件下载</a></li>
+                                              <li><a href="/about/contact">客户支持</a></li>
+                                              <!--<li><a href="">公告与通知</a></li>-->
+                                          </ul>
+                                      </li>
+                                      <li {{if .IsSuccessCase}}class="active"{{end}}><a href="/success-case">成功案例</a></li>
+                                </div>
+                            </div>
+                        </nav>
+                        <!-- navbar end -->
+                    </div>
+                    <!-- main-navigation end -->
+                </div>
+                <!-- header-right end -->
+            </div>
+        </div>
+    </div>
+</nav>

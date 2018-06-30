@@ -1,0 +1,69 @@
+package controllers
+
+import (
+	"strconv"
+	"strings"
+
+	"airdrop/models"
+)
+
+//"encoding/json"
+
+//"time"
+
+type IndexHandle struct {
+	baseController
+}
+
+func (this *IndexHandle) Index() {
+	var (
+		info models.AirdropInfo
+		list []*models.AirdropInfo
+	)
+
+	info.Query().OrderBy("-id").Limit(30, 0).All(&list)
+
+	this.Data["list"] = list
+	this.TplName = "_index.html"
+}
+
+func (this *IndexHandle) Detail() {
+	var (
+		id   int64
+		info *models.AirdropInfo = new(models.AirdropInfo)
+		err  error
+	)
+
+	this.Ctx.Output.Header("Cache-Control", "public")
+
+	idstr := this.Ctx.Input.Param(":id")
+	id, err = strconv.ParseInt(idstr, 10, 64)
+
+	if err != nil || id <= 0 {
+		this.Abort("404")
+		return
+	}
+
+	info.Id = id
+	err = info.Read()
+	if err != nil || info.Status < 0 {
+		this.Abort("404")
+		return
+	}
+
+	info.Views++
+	info.Update("Views")
+
+	info.Description = strings.Replace(info.Description, "&nbsp;", "", -1)
+	this.Data["info"] = info
+	this.TplName = "_detail.html"
+	//this.TplName = "_airdrop_detial.html"
+}
+
+func (this *IndexHandle) OldDetail() {
+	this.TplName = "_airdrop_detail.html"
+}
+
+func (this *IndexHandle) New() {
+	this.TplName = "_new.html"
+}

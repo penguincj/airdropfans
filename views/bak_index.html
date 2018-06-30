@@ -1,0 +1,56 @@
+{{template "base/base.html" .}}
+
+{{define "meta"}}
+
+  <meta name="description" content="Token 空投">
+  <meta name="keywords" content="Token 空投" />
+  <title>空投粉</title>
+
+{{end}}
+
+{{define "head"}}
+
+<link href="/static/css/app.css" rel="stylesheet">
+
+{{end}}
+
+{{define "body"}}
+<img src="/static/img/star-link.jpg" class="banner-image">
+<div class="banner-caption">
+  <h2 class="text-center">空投粉</h2>
+  <h5 class="text-center margin-top-30">最牛逼的空投币平台</h5>
+</div>
+ 
+<div class="store">
+  <div class="wrapper margin-bottom-50">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-8 col-lg-8">
+          <div class="card card-link-rel">
+            <div class="col-sm-6 col-md-4 col-lg-4">
+              <img class="producer-img-index" src="/static/img/producer/rusgas.png">
+            </div>
+            <div class="col-sm-6 col-md-8 col-lg-8">
+            <h2>RUSGAS</h2>
+            <a href="http://www.w3school.com.cn">W3School</a>
+            <p>可以实时监控交换机的系统、网络和服务状况。在Zabbix Server上导入云启提供的监控模板和shell脚本后可以监控ConnetOS交换机。</p>
+            <div class="card-bottom">
+              <a href="https://github.com/connetos/Zabbix_Template">前往下载 <i class="glyphicon glyphicon-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-8 col-lg-8">
+          <div class="card card-link-rel">
+            <h2>sDrop Collector</h2>
+            <p>网络质量感知功能sDrop的客户端软件以及wireshark抓包插件。提供集中搜集和展示交换机丢包信息功能。</p>
+            <div class="card-bottom">
+              <a href="https://github.com/connetos/sdrop-collector">前往下载 <i class="glyphicon glyphicon-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{end}} 

@@ -1,0 +1,185 @@
+{{template "base/base.html" .}}
+
+{{define "meta"}}
+
+<meta name="description" content="Token 空投">
+<meta name="keywords" content="Token 空投" />
+<title>空投粉</title>
+
+{{end}}
+
+{{define "head"}}
+
+<link href="/static/css/app.css" rel="stylesheet">
+
+{{end}}
+
+{{define "body"}}
+<div class="wrapper single margin-top-80 margin-bottom-50">
+  <div class="container">
+    <h1>{{.info.Name}}</h1>
+    <article id="post-9224" class="temperature-0 post-9224 airdrop type-airdrop status-publish has-post-thumbnail hentry" itemtype="http://schema.org/CreativeWork" itemscope="itemscope">
+      <div class="inside-article  ">
+        <div class="aidrop-info-wrapper">
+          <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-4">
+              <div class="airdrop-logo-thumbnail">
+                <a href="{{.info.AirdropAddr}}" rel="nofollow" target="_blank">
+                  <img class="airdrop-logo" src="{{.info.Photo}}" alt="">
+                </a>
+                <div class="airdrop-info">
+                  <ul>
+                    <li></li>
+                    <li><i class="far fa-calendar"></i> Airdrop starts {{.info.StartTime}}</li>
+                    <li><i class="fas fa-sign-in-alt"></i> Airdrop Link: <a href="{{.info.AirdropAddr}}" target="_blank" rel="nofollow">Go to airdrop</a></li>
+                    <li><i class="fa fa-stop-circle"></i> Total value: {{.info.TotalValue}}</li>
+                    <li><i class="fa fa-desktop"></i> Platform: {{.info.Platform}}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-8 col-lg-8">
+              <span class="drop-features">
+              {{str2html .info.Description}}
+              </span>
+              <p></p>
+              <div class="airdrop-guide">
+                <strong>获取糖果的步骤</strong>
+                <p>
+                {{str2html .info.StepGuide}}
+                </p>
+                <p>
+                {{str2html .info.IncentivePlan}}
+                </p>
+              </div>
+              <div class="airdrop-req">
+                <p><strong>需要关注:</strong></p>
+                <!-- Telegram -->
+
+                <div class="row">
+                  {{if .info.ReqTelegram}}
+                  <div class="aidrop-req-wrapper col-sm-6 col-md-4 col-lg-4">
+                    <p class="aidrop-req-title"><i class="fab fa-telegram-plane"></i> Telegram</p>
+                    <!--
+                        <ul>
+                          <li><i class="fa fa-check"></i> Join group</li>
+                          <li><i class="fa fa-check"></i> Post in group</li>
+                        </ul>
+                        -->
+                  </div>
+                  {{end}}
+                  <!-- End Telegram -->
+                  <!-- Twitter -->
+                  {{if .info.ReqTwitter}}
+                  <div class="aidrop-req-wrapper col-sm-6 col-md-4 col-lg-4">
+                    <p class="aidrop-req-title"><i class="fab fa-twitter"></i> Twitter</p>
+                    <!--
+                        <ul>
+                          <li><i class="fa fa-check"></i> Follow</li>
+                        </ul>
+                        -->
+                  </div>
+                  {{end}}
+                  <!-- End Twitter -->
+                  <!-- Reddit -->
+                  <!-- End Reddit -->
+                  <!-- Medium -->
+                  {{if .info.ReqMedium}}
+                  <div class="aidrop-req-wrapper col-sm-6 col-md-4 col-lg-4">
+                    <p class="aidrop-req-title"><i class="fab fa-medium"></i> Medium</p>
+                  </div>
+                  {{end}}
+                  <!-- End Medium -->
+                  <!-- LinkedIn -->
+                  <!-- End LinkedIn -->
+                  <!-- Facebook -->
+                  {{if .info.ReqFacebook}}
+                  <div class="aidrop-req-wrapper col-sm-6 col-md-4 col-lg-4">
+                    <p class="aidrop-req-title"><i class="fab fa-facebook"></i> Facebook</p>
+                  </div>
+                  {{end}}
+                  <!-- End Facebook -->
+                  <!-- Bitcointalk -->
+                  {{if .info.ReqBitcointalk}}
+                  <div class="aidrop-req-wrapper col-sm-6 col-md-4 col-lg-4">
+                    <p class="aidrop-req-title"><i class="fab fa-bitcoin"></i> Bitcointalk</p>
+                    <!--
+                        <ul>
+                          <li><i class="fa fa-check"></i> Posting in ANN thread</li>
+                        </ul>
+                        -->
+                  </div>
+                  {{end}}
+                  <!-- End Bitcointalk -->
+                  <!-- phone -->
+                  <!-- End phone -->
+                  <!-- kyc -->
+                  <!-- LinkedIn -->
+                  <!-- End LinkedIn -->
+                  <!-- kyc phone -->
+                  <!-- email -->
+                  {{if .info.ReqEmail}}
+                  <div class="aidrop-req-wrapper col-sm-6 col-md-4 col-lg-4">
+                    <p class="aidrop-req-title"><i class="fas fa-envelope"></i> E-Mail</p>
+                  </div>
+                  {{end}}
+                  <!-- End email -->
+
+                  <div class="special-reqs">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End grid-80 -->
+        </div> <!-- End airdrop-info-wrapper -->
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="airdrop-conv">
+              <p><a class="claim-airdrop button outline" href="{{.info.AirdropAddr}}" target="_blank" rel="nofollow">CLAIM AIRDROP <i class="fas fa-sign-in-alt"></i></a></p>
+            </div>
+            <div class="exclusive-info text-center">
+              <!--
+                <p id="remember-exclusive">Don't forget to join our exclusive <a href="https://airdrops.io/profede/">Profede airdrop</a>!</p>
+                -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="inside-article">
+        <div class="row">
+          <div class="col-sm-6 col-md-4 col-lg-4 text-center border-right">
+            <h3>Estimated Value</h3>
+            <p class="score-value">
+            {{.info.EstimateValue}}
+            </p>
+          </div>
+
+          <div class="col-sm-6 col-md-4 col-lg-4 text-center">
+            <h3>Tokens per Claim</h3>
+            <p class="score-value">
+            {{.info.TokensPerClaim}}
+            </p>
+          </div>
+
+          <div class="col-sm-6 col-md-4 col-lg-4 text-center border-left">
+            <h3>Max. Participants</h3>
+            <p class="score-value">
+
+            {{$len := len .info.MaxParticipants}}
+            {{if eq $len 0}}    
+                Unknown
+            {{else}}    
+                {{.info.MaxParticipants}}
+            {{end}} 
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</div>
+
+{{end}}

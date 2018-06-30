@@ -1,0 +1,337 @@
+{{template "base/base.html" .}}
+
+{{define "meta"}}
+
+<meta name="description" content="Token 空投">
+<meta name="keywords" content="Token 空投" />
+<title>空投粉</title>
+
+{{end}}
+
+{{define "head"}}
+
+<link href="/static/css/app.css" rel="stylesheet">
+
+{{end}}
+
+{{define "body"}}
+
+<div>
+  <div class="wrapper separate-containers margin-top-100 margin-bottom-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-4">
+          <h2>最新空投</h2>
+          <div class="airdrop-scroll-wrapper">
+            <div class="scrollWrap">
+              <div class="scrollContent">
+                {{range .list}}
+                <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
+                  <!--
+                  <div class="inside-article" onclick="location.href='http://localhost:8080/d/{{.Id}}'">
+                  -->
+                  <div class="inside-article" onclick="window.open('http://localhost:8080/d/{{.Id}}')">
+                    <div class="air-wrapper temperature-20">
+                      <div class="air-thumbnail">
+                        <img src="{{.Photo}}" alt="">
+                      </div>
+                      <div class="air-content-front">
+                        <a href="http://localhost:8080/d/{{.Id}}">
+                          <h3>{{.Name}}</h3>
+                        </a>
+                        <ul class="front-drop-list">
+                          <li class="est-value"><i class="far fa-money-bill-alt"></i> Value: <span>{{.EstimateValue}}</span></li>
+                        </ul>
+                        <ul class="req-drop-list">
+                          {{if .ReqTelegram}}
+                          <li class="reqdrop" title="Telegram required"><i class="fab fa-telegram-plane"></i></li>
+                          {{end}}
+                          {{if .ReqTwitter}}
+                          <li class="reqdrop" title="Twitter required"><i class="fab fa-twitter"></i></li>
+                          {{end}}
+                          {{if .ReqFacebook}}
+                          <li class="reqdrop" title="Facebook required"><i class="fab fa-facebook"></i></li>
+                          {{end}}
+                          {{if .ReqBitcointalk}}
+                          <li class="reqdrop" title="Bitcointalk required"><i class="fab fa-bitcoin"></i></li>
+                          {{end}}
+                          {{if .ReqMedium}}
+                          <li class="reqdrop" title="Medium required"><i class="fab fa-medium"></i></li>
+                          {{end}}
+                          {{if .ReqEmail}}
+                          <li class="reqdrop" title="Mail required"><i class="fas fa-envelope"></i></li>
+                          {{end}}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {{end}}
+                <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
+                  <div class="inside-article" onclick="location.href=''">
+                    <div class="air-wrapper temperature-20">
+                      <div class="air-thumbnail">
+                        <img src="/static/img/producer/2018/05/Denet-logo.jpg" alt="">
+                      </div>
+                      <div class="air-content-front">
+                        <a href="https://airdrops.io/denet/">
+                          <h3>DeNet</h3>
+                        </a>
+                        <ul class="front-drop-list">
+                          <li class="est-value"><i class="fa fa-money"></i> Value: <span>~$35</span></li>
+                        </ul>
+                        <ul class="req-drop-list">
+                          <li class="reqdrop" title="Telegram required"><i class="fa fa-telegram"></i></li>
+                          <li class="reqdrop" title="Mail required"><i class="fa fa-envelope"></i></li>
+                        </ul>
+                        <div class="air-time"><p>today</p></div>
+                        <div class="air-buttons">
+                          <a class="button outline" href="http://t.me/Get_dnet_bot?start=464243276" target="_blank">
+                            CLAIM AIRDROP <i class="fa fa-sign-in"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
+                  <div class="inside-article" onclick="location.href=''">
+                    <div class="air-wrapper temperature-20">
+                      <div class="air-thumbnail">
+                        <img src="/static/img/producer/2018/05/Denet-logo.jpg" alt="">
+                      </div>
+                      <div class="air-content-front">
+                        <a href="https://airdrops.io/denet/">
+                          <h3>DeNet</h3>
+                        </a>
+                        <ul class="front-drop-list">
+                          <li class="est-value"><i class="fa fa-money"></i> Value: <span>~$35</span></li>
+                        </ul>
+                        <ul class="req-drop-list">
+                          <li class="reqdrop" title="Telegram required"><i class="fa fa-telegram"></i></li>
+                          <li class="reqdrop" title="Mail required"><i class="fa fa-envelope"></i></li>
+                        </ul>
+                        <div class="air-time"><p>today</p></div>
+                        <div class="air-buttons">
+                          <a class="button outline" href="http://t.me/Get_dnet_bot?start=464243276" target="_blank">
+                            CLAIM AIRDROP <i class="fa fa-sign-in"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4">
+          <h2>最火空投</h2>
+          <div class="airdrop-scroll-wrapper">
+            <div class="scrollWrap">
+              <div class="scrollContent">
+                {{range .list}}
+                <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
+                  <div class="inside-article" onclick="location.href='http://localhost:8080/d/{{.Id}}'">
+                    <div class="air-wrapper temperature-20">
+                      <div class="air-thumbnail">
+                        <img src="{{.Photo}}" alt="">
+                      </div>
+                      <div class="air-content-front">
+                        <a href="http://localhost:8080/d/{{.Id}}">
+                          <h3>{{.Name}}</h3>
+                        </a>
+                        <ul class="front-drop-list">
+                          <li class="est-value"><i class="far fa-money-bill-alt"></i> Value: <span>{{.EstimateValue}}</span></li>
+                        </ul>
+                        <ul class="req-drop-list">
+                          {{if .ReqTelegram}}
+                          <li class="reqdrop" title="Telegram required"><i class="fab fa-telegram-plane"></i></li>
+                          {{end}}
+                          {{if .ReqTwitter}}
+                          <li class="reqdrop" title="Twitter required"><i class="fab fa-twitter"></i></li>
+                          {{end}}
+                          {{if .ReqFacebook}}
+                          <li class="reqdrop" title="Facebook required"><i class="fab fa-facebook"></i></li>
+                          {{end}}
+                          {{if .ReqBitcointalk}}
+                          <li class="reqdrop" title="Bitcointalk required"><i class="fab fa-bitcoin"></i></li>
+                          {{end}}
+                          {{if .ReqMedium}}
+                          <li class="reqdrop" title="Medium required"><i class="fab fa-medium"></i></li>
+                          {{end}}
+                          {{if .ReqEmail}}
+                          <li class="reqdrop" title="Mail required"><i class="fas fa-envelope"></i></li>
+                          {{end}}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {{end}}
+                <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
+                  <div class="inside-article" onclick="location.href=''">
+                    <div class="air-wrapper temperature-20">
+                      <div class="air-thumbnail">
+                        <img src="/static/img/producer/2018/05/Denet-logo.jpg" alt="">
+                      </div>
+                      <div class="air-content-front">
+                        <a href="https://airdrops.io/denet/">
+                          <h3>DeNet</h3>
+                        </a>
+                        <ul class="front-drop-list">
+                          <li class="est-value"><i class="fa fa-money"></i> Value: <span>~$35</span></li>
+                        </ul>
+                        <ul class="req-drop-list">
+                          <li class="reqdrop" title="Telegram required"><i class="fa fa-telegram"></i></li>
+                          <li class="reqdrop" title="Mail required"><i class="fa fa-envelope"></i></li>
+                        </ul>
+                        <div class="air-time"><p>today</p></div>
+                        <div class="air-buttons">
+                          <a class="button outline" href="http://t.me/Get_dnet_bot?start=464243276" target="_blank">
+                            CLAIM AIRDROP <i class="fa fa-sign-in"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
+                  <div class="inside-article" onclick="location.href=''">
+                    <div class="air-wrapper temperature-20">
+                      <div class="air-thumbnail">
+                        <img src="/static/img/producer/2018/05/Denet-logo.jpg" alt="">
+                      </div>
+                      <div class="air-content-front">
+                        <a href="https://airdrops.io/denet/">
+                          <h3>DeNet</h3>
+                        </a>
+                        <ul class="front-drop-list">
+                          <li class="est-value"><i class="fa fa-money"></i> Value: <span>~$35</span></li>
+                        </ul>
+                        <ul class="req-drop-list">
+                          <li class="reqdrop" title="Telegram required"><i class="fa fa-telegram"></i></li>
+                          <li class="reqdrop" title="Mail required"><i class="fa fa-envelope"></i></li>
+                        </ul>
+                        <div class="air-time"><p>today</p></div>
+                        <div class="air-buttons">
+                          <a class="button outline" href="http://t.me/Get_dnet_bot?start=464243276" target="_blank">
+                            CLAIM AIRDROP <i class="fa fa-sign-in"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4">
+          <h2>固定空投</h2>
+          <div class="airdrop-scroll-wrapper">
+            <div class="scrollWrap">
+              <div class="scrollContent">
+                {{range .list}}
+                <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
+                  <div class="inside-article" onclick="location.href='http://localhost:8080/d/{{.Id}}'">
+                    <div class="air-wrapper temperature-20">
+                      <div class="air-thumbnail">
+                        <img src="{{.Photo}}" alt="">
+                      </div>
+                      <div class="air-content-front">
+                        <a href="http://localhost:8080/d/{{.Id}}">
+                          <h3>{{.Name}}</h3>
+                        </a>
+                        <ul class="front-drop-list">
+                          <li class="est-value"><i class="far fa-money-bill-alt"></i> Value: <span>{{.EstimateValue}}</span></li>
+                        </ul>
+                        <ul class="req-drop-list">
+                          {{if .ReqTelegram}}
+                          <li class="reqdrop" title="Telegram required"><i class="fab fa-telegram-plane"></i></li>
+                          {{end}}
+                          {{if .ReqTwitter}}
+                          <li class="reqdrop" title="Twitter required"><i class="fab fa-twitter"></i></li>
+                          {{end}}
+                          {{if .ReqFacebook}}
+                          <li class="reqdrop" title="Facebook required"><i class="fab fa-facebook"></i></li>
+                          {{end}}
+                          {{if .ReqBitcointalk}}
+                          <li class="reqdrop" title="Bitcointalk required"><i class="fab fa-bitcoin"></i></li>
+                          {{end}}
+                          {{if .ReqMedium}}
+                          <li class="reqdrop" title="Medium required"><i class="fab fa-medium"></i></li>
+                          {{end}}
+                          {{if .ReqEmail}}
+                          <li class="reqdrop" title="Mail required"><i class="fas fa-envelope"></i></li>
+                          {{end}}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {{end}}
+                <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
+                  <div class="inside-article" onclick="location.href=''">
+                    <div class="air-wrapper temperature-20">
+                      <div class="air-thumbnail">
+                        <img src="/static/img/producer/2018/05/Denet-logo.jpg" alt="">
+                      </div>
+                      <div class="air-content-front">
+                        <a href="https://airdrops.io/denet/">
+                          <h3>DeNet</h3>
+                        </a>
+                        <ul class="front-drop-list">
+                          <li class="est-value"><i class="fa fa-money"></i> Value: <span>~$35</span></li>
+                        </ul>
+                        <ul class="req-drop-list">
+                          <li class="reqdrop" title="Telegram required"><i class="fa fa-telegram"></i></li>
+                          <li class="reqdrop" title="Mail required"><i class="fa fa-envelope"></i></li>
+                        </ul>
+                        <div class="air-time"><p>today</p></div>
+                        <div class="air-buttons">
+                          <a class="button outline" href="http://t.me/Get_dnet_bot?start=464243276" target="_blank">
+                            CLAIM AIRDROP <i class="fa fa-sign-in"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
+                  <div class="inside-article" onclick="location.href=''">
+                    <div class="air-wrapper temperature-20">
+                      <div class="air-thumbnail">
+                        <img src="/static/img/producer/2018/05/Denet-logo.jpg" alt="">
+                      </div>
+                      <div class="air-content-front">
+                        <a href="https://airdrops.io/denet/">
+                          <h3>DeNet</h3>
+                        </a>
+                        <ul class="front-drop-list">
+                          <li class="est-value"><i class="fa fa-money"></i> Value: <span>~$35</span></li>
+                        </ul>
+                        <ul class="req-drop-list">
+                          <li class="reqdrop" title="Telegram required"><i class="fa fa-telegram"></i></li>
+                          <li class="reqdrop" title="Mail required"><i class="fa fa-envelope"></i></li>
+                        </ul>
+                        <div class="air-time"><p>today</p></div>
+                        <div class="air-buttons">
+                          <a class="button outline" href="http://t.me/Get_dnet_bot?start=464243276" target="_blank">
+                            CLAIM AIRDROP <i class="fa fa-sign-in"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{end}}
