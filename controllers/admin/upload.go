@@ -54,7 +54,7 @@ func (this *UploadHandle) UploadSave() {
 		data, err := ioutil.ReadAll(file)
 		err = ioutil.WriteFile(imgdir+tempfilename, data, 0777)
 
-		imgUrl := "http://localhost:8080" + abimgdir + tempfilename
+		imgUrl := abimgdir + tempfilename
 		fmt.Println("cj imgUrl ", imgUrl)
 
 		if err != nil {

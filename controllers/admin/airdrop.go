@@ -159,6 +159,9 @@ func (this *AirdropHandle) Save() {
 	if err != nil {
 		this.showmsg("保存出错，错误信息：" + err.Error())
 	} else {
-		this.showmsg("数据保存成功...", this.admindir+"airdrop/add")
+		this.showmsg("数据保存成功...", "/d/" + strconv.FormatInt(id, 10))
+		/*
+		this.showmsg("数据保存成功...", "/d/" + strconv.FormatInt(int64, id)this.admindir+"airdrop/add", )
+		*/
 	}
 }

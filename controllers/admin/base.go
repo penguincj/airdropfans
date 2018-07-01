@@ -64,6 +64,7 @@ func (this *baseController) showmsg(msg ...string) {
 	this.Data["adminname"] = this.username
 	this.Data["msg"] = msg[0]
 	this.Data["redirect"] = msg[1]
+	this.Data["list"] = msg[1]
 	this.TplName = "admin/showmsg.html"
 	this.Render()
 	this.StopRun()
