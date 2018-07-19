@@ -19,11 +19,18 @@ func (this *IndexHandle) Index() {
 	var (
 		info models.AirdropInfo
 		list []*models.AirdropInfo
+		hotList []*models.AirdropInfo
+		token models.TokenPrice
+		tokenList []*models.TokenPrice
 	)
 
+	token.Query().OrderBy("id").Limit(8, 0).All(&tokenList)
 	info.Query().OrderBy("-id").Limit(30, 0).All(&list)
+	info.Query().OrderBy("-temperature").Limit(30, 0).All(&hotList)
 
+	this.Data["tokenList"] = tokenList
 	this.Data["list"] = list
+	this.Data["hotList"] = hotList
 	this.TplName = "_index.html"
 }
 
@@ -52,7 +59,9 @@ func (this *IndexHandle) Detail() {
 	}
 
 	info.Views++
-	info.Update("Views")
+	info.Temperature  = info.Views * 3 + info.Vote * 5
+
+	info.Update("views", "temperature")
 
 	info.Description = strings.Replace(info.Description, "&nbsp;", "", -1)
 	this.Data["info"] = info

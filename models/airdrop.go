@@ -50,6 +50,7 @@ type AirdropInfo struct {
 	SeoKeywords     string `orm:"size(500)"`  //seo关键字
 	SeoDescription  string `orm:"size(1000)"` //seo说明
 	Views           int64  //浏览量
+	Vote           int64  
 }
 
 func (p *AirdropInfo) TableName() string {

@@ -13,6 +13,8 @@ func init() {
 	beego.Router("/d/:id:int/", &controllers.IndexHandle{}, "*:Detail")
 	beego.Router("/new", &controllers.IndexHandle{}, "*:New")
 
+	//beego.Router("/meeting", &controllers.MeetingHandle{}, "*:Meeting")
+
 	///admin
 	admindir := beego.AppConfig.String("admindir")
 	if len(admindir) == 0 {

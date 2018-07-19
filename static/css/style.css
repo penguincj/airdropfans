@@ -2171,17 +2171,23 @@ ul.recommend-star li {
     position: relative;
 
     display: block;
-    overflow: hidden;
     /* overflow-y: scroll; */
     /* min-height: 460px; */
 
-    height: 460px;
+    height: 600px;
 }
 .scrollWrap {
-    overflow: hidden;
+    overflow: scroll;
     height: 100%;
     position: relative;
-    z-index: 1;
+    /*z-index: 0;*/
+    scrollbar-face-color: #889B9F;
+    scrollbar-shadow-color: #3D5054;
+    scrollbar-highlight-color: #C3D6DA;
+    scrollbar-3dlight-color: #3D5054;
+    scrollbar-darkshadow-color: #85989C;
+    scrollbar-track-color: #95A6AA;
+    scrollbar-arrow-color: #FFD6DA;
 }
 .scrollContent {
     height: 100%;
@@ -2212,8 +2218,8 @@ ul.recommend-star li {
     position: relative;
     float: left;
     overflow: hidden;
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     text-align: center;
     border-radius: 100px;
     background: #f5f5f5;
@@ -2376,39 +2382,10 @@ article, aside, details, figcaption, figure, footer, header, main, nav, section 
 .airdrop-logo {
     max-width: 160px;
 }
-.airdrop-rating-temp-wrapper {
-    margin-top: 25px;
-}
-.airdrop-rating-temp {
-    position: relative;
-    display: inline-block;
-    width: 100px;
-    height: 30px;
-    padding: 5px 10px;
-    border: 1px solid #d1d5db;
-    border-radius: 10px;
-}
-.airdrop-rating-temp-single {
-    font-size: 30px;
-    font-size: 20px;
-    font-weight: bold;
-    display: block;
-    text-align: center;
-}
-.post-ratings {
-    margin: 0 auto;
-    text-align: center;
-}
-
-.post-ratings {
-    width: 100%;
-    opacity: 1;
-    /* background-color: #ffffff; */
-}
 .post-ratings img:first-child {
     position: absolute;
-    top: 10px;
-    left: 20px;
+    top: -25px;
+    left: 5px;
 }
 
 .post-ratings img, .post-ratings-loading img, .post-ratings-image img {
@@ -2418,8 +2395,8 @@ article, aside, details, figcaption, figure, footer, header, main, nav, section 
 }
 .post-ratings img:last-child {
     position: absolute;
-    top: 10px;
-    right: 20px;
+    top: -25px;
+    right: 5px;
 }
 .post-ratings-loading {
     display: none;
@@ -2582,3 +2559,140 @@ button, html input[type='button'], input[type='reset'], input[type='submit'], a.
     border: 2px solid #20c;
     border-radius: 3px;
 }
+
+.no-js .owl-carousel,.owl-carousel.owl-loaded {
+    display: block
+}
+
+.owl-carousel {
+    display: none;
+    width: 100%;
+    z-index: 1;
+}
+
+.owl-carousel, .owl-carousel .owl-item {
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+}
+
+.owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: translate3d(0,0,0);
+}
+
+.owl-carousel .owl-stage {
+    position: relative;
+    -ms-touch-action: pan-Y;
+    touch-action: manipulation;
+    -moz-backface-visibility: hidden;
+}
+.owl-carousel.owl-drag .owl-item {
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.owl-carousel .owl-item {
+    min-height: 1px;
+    float: left;
+    -webkit-backface-visibility: hidden;
+    -webkit-touch-callout: none;
+}
+.owl-carousel, .owl-carousel .owl-item {
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+}
+.owl-item .item {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 150px;
+    background-position: center;
+    background-size: cover;
+}
+.item .rotation-slider-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    background: rgba(0, 0, 0, .4);
+}
+.rotation-slider-content-inside {
+    min-height: 50px;
+    padding: 10px;
+}
+.rotation-slider-headline {
+    font-size: 12px;
+    font-weight: bold;
+}
+.item .rotation-slider-short {
+    font-size: 11px;
+    font-weight: 300;
+}
+.airdrop-ticker {
+    margin-top: 0;
+    margin-bottom: 30px !important;
+}
+.airdrop-ticker ul {
+    line-height: 13px;
+    margin: 0;
+    list-style: none;
+}
+.airdrop-ticker ul li {
+    font-family: Monospace;
+    font-size: 11px;
+    display: inline-block;
+    margin-right: 5px;
+}
+.airdrop-ticker ul li .airdrop-ticker-percent {
+    font-weight: 700;
+    color: green;
+}
+.airdrop-ticker ul li .airdrop-ticker-percent.negative {
+    color: red;
+}
+.droptemp {
+    position: absolute;
+    right: 30px;
+}
+.droptemp i {
+    color: red;
+}
+.airdrop-rating-temp-wrapper {
+    margin-top: 25px;
+}
+.airdrop-rating-temp {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    padding: 5px 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+}
+.airdrop-rating-temp-single {
+    font-size: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+}
+.post-ratings {
+    margin: 0 auto;
+    text-align: center;
+}
+.post-ratings {
+    width: 100%;
+    opacity: 1;
+    /* background-color: #ffffff; */
+}
+.post-ratings-loading {
+    display: none;
+    height: 16px;
+    text-align: left;
+}
+

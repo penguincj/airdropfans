@@ -11,6 +11,7 @@
 {{define "head"}}
 
 <link href="/static/css/app.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 {{end}}
 
@@ -27,13 +28,29 @@
                 <a href="{{.info.AirdropAddr}}" rel="nofollow" target="_blank">
                   <img class="airdrop-logo" src="{{.info.Photo}}" alt="">
                 </a>
+                <div class="airdrop-rating-temp-wrapper">
+                  <div class="airdrop-rating-temp">
+                    <div class="airdrop-rating-temp-single">{{.info.Temperature}}°</div>
+                    <div id="post-ratings-12291" class="post-ratings" data-nonce="99bab63345">
+                      <img id="decrement-app" src="/static/img/rating_1_half.gif" alt="Cold" title="Cold">
+                      <img id="increment-app" src="/static/img/rating_2_off.gif" alt="Hot" title="Hot">
+                      <!--
+                      <img id="increment-app" src="/static/img/rating_2_off.gif" alt="Hot" title="Hot" onmouseover="current_rating(12291, 2, 'Hot');" onmouseout="ratings_off(0.7, 1, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;">
+                      -->
+                    </div>
+                    <div id="post-ratings-12291-loading" class="post-ratings-loading">
+                      <img src="/static/img/loading.gif" width="16" height="16" class="post-ratings-image">
+                      Loading...
+                    </div>
+                  </div>
+                </div>
                 <div class="airdrop-info">
                   <ul>
                     <li></li>
-                    <li><i class="far fa-calendar"></i> Airdrop starts {{.info.StartTime}}</li>
-                    <li><i class="fas fa-sign-in-alt"></i> Airdrop Link: <a href="{{.info.AirdropAddr}}" target="_blank" rel="nofollow">Go to airdrop</a></li>
-                    <li><i class="fa fa-stop-circle"></i> Total value: {{.info.TotalValue}}</li>
-                    <li><i class="fa fa-desktop"></i> Platform: {{.info.Platform}}</li>
+                    <li><i class="far fa-calendar"></i> 空投开始时间: {{.info.StartTime}}</li>
+                    <li><i class="fas fa-sign-in-alt"></i> 空投链接: <a href="{{.info.AirdropAddr}}" target="_blank" rel="nofollow">前往空投页面</a></li>
+                    <li><i class="fa fa-stop-circle"></i> 空投总量: {{.info.TotalValue}}</li>
+                    <li><i class="fa fa-desktop"></i> 平台: {{.info.Platform}}</li>
                   </ul>
                 </div>
               </div>
@@ -135,7 +152,7 @@
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
             <div class="airdrop-conv">
-              <p><a class="claim-airdrop button outline" href="{{.info.AirdropAddr}}" target="_blank" rel="nofollow">CLAIM AIRDROP <i class="fas fa-sign-in-alt"></i></a></p>
+              <p><a class="claim-airdrop button outline" href="{{.info.AirdropAddr}}" target="_blank" rel="nofollow">参加空投 <i class="fas fa-sign-in-alt"></i></a></p>
             </div>
             <div class="exclusive-info text-center">
               <!--
@@ -151,26 +168,26 @@
       <div class="inside-article">
         <div class="row">
           <div class="col-sm-6 col-md-4 col-lg-4 text-center border-right">
-            <h3>Estimated Value</h3>
+            <h3>预估收益</h3>
             <p class="score-value">
             {{.info.EstimateValue}}
             </p>
           </div>
 
           <div class="col-sm-6 col-md-4 col-lg-4 text-center">
-            <h3>Tokens per Claim</h3>
+            <h3>参与可得代币</h3>
             <p class="score-value">
             {{.info.TokensPerClaim}}
             </p>
           </div>
 
           <div class="col-sm-6 col-md-4 col-lg-4 text-center border-left">
-            <h3>Max. Participants</h3>
+            <h3>最大参与人数</h3>
             <p class="score-value">
 
             {{$len := len .info.MaxParticipants}}
             {{if eq $len 0}}    
-                Unknown
+                未知
             {{else}}    
                 {{.info.MaxParticipants}}
             {{end}} 

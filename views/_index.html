@@ -2,8 +2,8 @@
 
 {{define "meta"}}
 
-<meta name="description" content="Token 空投">
-<meta name="keywords" content="Token 空投" />
+<meta name="description" content="Token 空投 糖果 airdrop">
+<meta name="keywords" content="Token 空投 糖果 airdrop" />
 <title>空投粉</title>
 
 {{end}}
@@ -11,6 +11,7 @@
 {{define "head"}}
 
 <link href="/static/css/app.css" rel="stylesheet">
+<meta name="baidu-site-verification" content="05jjSGn8um" />
 
 {{end}}
 
@@ -18,148 +19,183 @@
 
 <div>
   <div class="wrapper separate-containers margin-top-100 margin-bottom-100">
+
     <div class="container">
       <div class="row">
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <h2>最新空投</h2>
-          <div class="airdrop-scroll-wrapper">
-            <div class="scrollWrap">
-              <div class="scrollContent">
-                {{range .list}}
-                <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
-                  <div class="inside-article" onclick="window.open('/d/{{.Id}}')">
-                    <div class="air-wrapper temperature-20">
-                      <div class="air-thumbnail">
-                        <img src="{{.Photo}}" alt="">
-                      </div>
-                      <div class="air-content-front">
-                        <a onclick="window.open('/d/{{.Id}}')">
-                          <h3>{{.Name}}</h3>
-                        </a>
-                        <ul class="front-drop-list">
-                          <li class="est-value"><i class="far fa-money-bill-alt"></i> Value: <span>{{.EstimateValue}}</span></li>
-                        </ul>
-                        <ul class="req-drop-list">
-                          {{if .ReqTelegram}}
-                          <li class="reqdrop" title="Telegram required"><i class="fab fa-telegram-plane"></i></li>
-                          {{end}}
-                          {{if .ReqTwitter}}
-                          <li class="reqdrop" title="Twitter required"><i class="fab fa-twitter"></i></li>
-                          {{end}}
-                          {{if .ReqFacebook}}
-                          <li class="reqdrop" title="Facebook required"><i class="fab fa-facebook"></i></li>
-                          {{end}}
-                          {{if .ReqBitcointalk}}
-                          <li class="reqdrop" title="Bitcointalk required"><i class="fab fa-bitcoin"></i></li>
-                          {{end}}
-                          {{if .ReqMedium}}
-                          <li class="reqdrop" title="Medium required"><i class="fab fa-medium"></i></li>
-                          {{end}}
-                          {{if .ReqEmail}}
-                          <li class="reqdrop" title="Mail required"><i class="fas fa-envelope"></i></li>
-                          {{end}}
-                        </ul>
-                      </div>
+        <div class="airdrop-ticker">
+          <ul>
+            {{range .tokenList}}
+            <li>
+              <b>{{.Name}}</b> ${{.CloseS}} <span class="airdrop-ticker-percent {{.Fluctuation}}">{{.FloatPercent}}%  </span>
+            </li>
+            {{end}}
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="container" style="visibility: visible; height: 150px;">
+        <div class="row">
+          <div class="col-sm-12 col-md-3 col-lg-3">
+            <div class="owl-item">
+              <a href="http://airdropfans.com/d/5">
+                <div class="item" style="background-image:url(http://airdropfans.com/static/img/banner/superbloom-rotating.png)">
+                  <div class="rotation-slider-content">
+                    <div class="rotation-slider-content-inside">
+                      <div class="rotation-slider-headline">Superbloom Airdrop</div>
+                      <div class="rotation-slider-short">注册即得50 SEED，推荐得50 SEED</div>
                     </div>
                   </div>
                 </div>
-                {{end}}
-              </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-3 col-lg-3">
+            <div class="owl-item">
+              <a href="http://airdropfans.com/d/4">
+                <div class="item" style="background-image:url(http://airdropfans.com/static/img/banner/prime-rotating.png)">
+                  <div class="rotation-slider-content">
+                    <div class="rotation-slider-content-inside">
+                      <div class="rotation-slider-headline">Prime Airdrop</div>
+                      <div class="rotation-slider-short">做任务获得500 PRIME，推荐得50 PRIME </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-3 col-lg-3">
+            <div class="owl-item cloned" style="width: 270px; margin-right: 10px;">
+              <a href="http://airdropfans.com/d/4">
+                <div class="item" style="background-image:url(http://airdropfans.com/static/img/banner/nextpakk_rotating.png)">
+                  <div class="rotation-slider-content">
+                    <div class="rotation-slider-content-inside">
+                      <div class="rotation-slider-headline">NextPakk空投第二轮</div>
+                      <div class="rotation-slider-short">做任务获得200 Pakka($64)，推荐得25 Pakka</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-3 col-lg-3">
+            <div class="owl-item">
+              <a href="http://airdropfans.com">
+                <div class="item" style="background-image:url(http://airdropfans.com/static/img/banner/meeting.png)">
+                  <div class="rotation-slider-content">
+                    <div class="rotation-slider-content-inside">
+                      <div class="rotation-slider-headline">区块链会议</div>
+                      <div class="rotation-slider-short">最火爆的区块链线下活动都在这里</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <h2>最火空投</h2>
-          <div class="airdrop-scroll-wrapper">
-            <div class="scrollWrap">
-              <div class="scrollContent">
-                {{range .list}}
-                <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
-                  <div class="inside-article" onclick="location.href='/d/{{.Id}}'">
-                    <div class="air-wrapper temperature-20">
-                      <div class="air-thumbnail">
-                        <img src="{{.Photo}}" alt="">
-                      </div>
-                      <div class="air-content-front">
-                        <a onclick="window.open('/d/{{.Id}}')">
+      </div>
+
+      <br>
+      <br>
+
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-5 col-lg-5">
+            <h2>最新空投</h2>
+            <div class="airdrop-scroll-wrapper">
+              <div class="scrollWrap">
+                <div class="scrollContent">
+                  {{range .list}}
+                  <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
+                    <div class="inside-article" onclick="window.open('/d/{{.Id}}')">
+                      <div class="air-wrapper temperature-20">
+                        <div class="air-thumbnail">
+                          <img src="{{.Photo}}" alt="">
+                        </div>
+                        <div class="air-content-front">
                           <h3>{{.Name}}</h3>
-                        </a>
-                        <ul class="front-drop-list">
-                          <li class="est-value"><i class="far fa-money-bill-alt"></i> Value: <span>{{.EstimateValue}}</span></li>
-                        </ul>
-                        <ul class="req-drop-list">
-                          {{if .ReqTelegram}}
-                          <li class="reqdrop" title="Telegram required"><i class="fab fa-telegram-plane"></i></li>
-                          {{end}}
-                          {{if .ReqTwitter}}
-                          <li class="reqdrop" title="Twitter required"><i class="fab fa-twitter"></i></li>
-                          {{end}}
-                          {{if .ReqFacebook}}
-                          <li class="reqdrop" title="Facebook required"><i class="fab fa-facebook"></i></li>
-                          {{end}}
-                          {{if .ReqBitcointalk}}
-                          <li class="reqdrop" title="Bitcointalk required"><i class="fab fa-bitcoin"></i></li>
-                          {{end}}
-                          {{if .ReqMedium}}
-                          <li class="reqdrop" title="Medium required"><i class="fab fa-medium"></i></li>
-                          {{end}}
-                          {{if .ReqEmail}}
-                          <li class="reqdrop" title="Mail required"><i class="fas fa-envelope"></i></li>
-                          {{end}}
-                        </ul>
+                          <ul class="front-drop-list">
+                            <li class="est-value"><i class="far fa-money-bill-alt"></i> 收益: <span>{{.EstimateValue}}</span></li>
+                          </ul>
+                          <ul class="req-drop-list">
+                            {{if .ReqTelegram}}
+                            <li class="reqdrop" title="Telegram required"><i class="fab fa-telegram-plane"></i></li>
+                            {{end}}
+                            {{if .ReqTwitter}}
+                            <li class="reqdrop" title="Twitter required"><i class="fab fa-twitter"></i></li>
+                            {{end}}
+                            {{if .ReqFacebook}}
+                            <li class="reqdrop" title="Facebook required"><i class="fab fa-facebook"></i></li>
+                            {{end}}
+                            {{if .ReqBitcointalk}}
+                            <li class="reqdrop" title="Bitcointalk required"><i class="fab fa-bitcoin"></i></li>
+                            {{end}}
+                            {{if .ReqMedium}}
+                            <li class="reqdrop" title="Medium required"><i class="fab fa-medium"></i></li>
+                            {{end}}
+                            {{if .ReqEmail}}
+                            <li class="reqdrop" title="Mail required"><i class="fas fa-envelope"></i></li>
+                            {{end}}
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
+                  {{end}}
                 </div>
-                {{end}}
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <h2>固定空投</h2>
-          <div class="airdrop-scroll-wrapper">
-            <div class="scrollWrap">
-              <div class="scrollContent">
-                {{range .list}}
-                <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
-                  <div class="inside-article" onclick="location.href='/d/{{.Id}}'">
-                    <div class="air-wrapper temperature-20">
-                      <div class="air-thumbnail">
-                        <img src="{{.Photo}}" alt="">
-                      </div>
-                      <div class="air-content-front">
-                        <a onclick="window.open('/d/{{.Id}}')">
+          <div class="col-sm-6 col-md-2 col-lg-2">
+          </div>
+          <div class="col-sm-6 col-md-5 col-lg-5">
+            <h2>最火空投</h2>
+            <div class="airdrop-scroll-wrapper">
+              <div class="scrollWrap">
+                <div class="scrollContent">
+                  {{range .hotList}}
+                  <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
+                    <div class="inside-article" onclick="window.open('/d/{{.Id}}')">
+                      <div class="air-wrapper temperature-20">
+                        <div class="droptemp">
+                          <i class="fa fa-fire"></i>
+                          <span>{{.Temperature}}°</span>
+                        </div>
+                        <div class="air-thumbnail">
+                          <img src="{{.Photo}}" alt="">
+                        </div>
+                        <div class="air-content-front">
                           <h3>{{.Name}}</h3>
-                        </a>
-                        <ul class="front-drop-list">
-                          <li class="est-value"><i class="far fa-money-bill-alt"></i> Value: <span>{{.EstimateValue}}</span></li>
-                        </ul>
-                        <ul class="req-drop-list">
-                          {{if .ReqTelegram}}
-                          <li class="reqdrop" title="Telegram required"><i class="fab fa-telegram-plane"></i></li>
-                          {{end}}
-                          {{if .ReqTwitter}}
-                          <li class="reqdrop" title="Twitter required"><i class="fab fa-twitter"></i></li>
-                          {{end}}
-                          {{if .ReqFacebook}}
-                          <li class="reqdrop" title="Facebook required"><i class="fab fa-facebook"></i></li>
-                          {{end}}
-                          {{if .ReqBitcointalk}}
-                          <li class="reqdrop" title="Bitcointalk required"><i class="fab fa-bitcoin"></i></li>
-                          {{end}}
-                          {{if .ReqMedium}}
-                          <li class="reqdrop" title="Medium required"><i class="fab fa-medium"></i></li>
-                          {{end}}
-                          {{if .ReqEmail}}
-                          <li class="reqdrop" title="Mail required"><i class="fas fa-envelope"></i></li>
-                          {{end}}
-                        </ul>
+                          <ul class="front-drop-list">
+                            <li class="est-value"><i class="far fa-money-bill-alt"></i> 收益: <span>{{.EstimateValue}}</span></li>
+                          </ul>
+                          <ul class="req-drop-list">
+                            {{if .ReqTelegram}}
+                            <li class="reqdrop" title="Telegram required"><i class="fab fa-telegram-plane"></i></li>
+                            {{end}}
+                            {{if .ReqTwitter}}
+                            <li class="reqdrop" title="Twitter required"><i class="fab fa-twitter"></i></li>
+                            {{end}}
+                            {{if .ReqFacebook}}
+                            <li class="reqdrop" title="Facebook required"><i class="fab fa-facebook"></i></li>
+                            {{end}}
+                            {{if .ReqBitcointalk}}
+                            <li class="reqdrop" title="Bitcointalk required"><i class="fab fa-bitcoin"></i></li>
+                            {{end}}
+                            {{if .ReqMedium}}
+                            <li class="reqdrop" title="Medium required"><i class="fab fa-medium"></i></li>
+                            {{end}}
+                            {{if .ReqEmail}}
+                            <li class="reqdrop" title="Mail required"><i class="fas fa-envelope"></i></li>
+                            {{end}}
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
+                  {{end}}
                 </div>
-                {{end}}
               </div>
             </div>
           </div>
@@ -167,6 +203,4 @@
       </div>
     </div>
   </div>
-</div>
-
-{{end}}
+  {{end}}
