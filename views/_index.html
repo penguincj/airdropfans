@@ -1,37 +1,71 @@
-{{template "base/base.html" .}}
+<<<template "base/base.html" .>>>
 
-{{define "meta"}}
+<<<define "meta">>>
 
 <meta name="description" content="Token 空投 糖果 airdrop">
 <meta name="keywords" content="Token 空投 糖果 airdrop" />
 <title>空投粉</title>
 
-{{end}}
+<<<end>>>
 
-{{define "head"}}
+<<<define "head">>>
 
 <link href="/static/css/app.css" rel="stylesheet">
 <meta name="baidu-site-verification" content="05jjSGn8um" />
+<script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+<!--
+<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+-->
 
-{{end}}
+<script type="text/javascript" src="/static/js/websocket.js"></script>
 
-{{define "body"}}
+<script>
+    // 这是我们的Model
+    new Vue({
+        el: '#app',
+        data: {
+            message:'Hello World!'
+        }
+    })
+</script>
+
+<<<end>>>
+
+<<<define "body">>>
+
+<div id="app">
+    <p>{{ message }}</p>
+    <input type="text" v-model="message"/>
+</div>
 
 <div>
   <div class="wrapper separate-containers margin-top-100 margin-bottom-100">
-
+    
+    <div class="container">
+      <div class="row">
+        <div class="airdrop-ticker" id="market">
+          <ul>
+            <li v-for="market in markets">
+              <b>{{market.Name}}</b> ${{ market.CloseS }} <span class="airdrop-ticker-percent {{ market.Fluctuation }}">{{ market.FloatPercent }}%  </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+     
     <div class="container">
       <div class="row">
         <div class="airdrop-ticker">
           <ul>
-            {{range .tokenList}}
+            <<<range .tokenList>>>
             <li>
-              <b>{{.Name}}</b> ${{.CloseS}} <span class="airdrop-ticker-percent {{.Fluctuation}}">{{.FloatPercent}}%  </span>
+              <b><<<.Name>>></b> $<<<.CloseS>>> <span class="airdrop-ticker-percent <<<.Fluctuation>>>"><<<.FloatPercent>>>%  </span>
             </li>
-            {{end}}
+            <<<end>>>
           </ul>
         </div>
       </div>
+    </div>
 
 
       <div class="container" style="visibility: visible; height: 150px;">
@@ -106,43 +140,43 @@
             <div class="airdrop-scroll-wrapper">
               <div class="scrollWrap">
                 <div class="scrollContent">
-                  {{range .list}}
+                  <<<range .list>>>
                   <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
-                    <div class="inside-article" onclick="window.open('/d/{{.Id}}')">
+                    <div class="inside-article" onclick="window.open('/d/<<<.Id>>>')">
                       <div class="air-wrapper temperature-20">
                         <div class="air-thumbnail">
-                          <img src="{{.Photo}}" alt="">
+                          <img src="<<<.Photo>>>" alt="">
                         </div>
                         <div class="air-content-front">
-                          <h3>{{.Name}}</h3>
+                          <h3><<<.Name>>></h3>
                           <ul class="front-drop-list">
-                            <li class="est-value"><i class="far fa-money-bill-alt"></i> 收益: <span>{{.EstimateValue}}</span></li>
+                            <li class="est-value"><i class="far fa-money-bill-alt"></i> 收益: <span><<<.EstimateValue>>></span></li>
                           </ul>
                           <ul class="req-drop-list">
-                            {{if .ReqTelegram}}
+                            <<<if .ReqTelegram>>>
                             <li class="reqdrop" title="Telegram required"><i class="fab fa-telegram-plane"></i></li>
-                            {{end}}
-                            {{if .ReqTwitter}}
+                            <<<end>>>
+                            <<<if .ReqTwitter>>>
                             <li class="reqdrop" title="Twitter required"><i class="fab fa-twitter"></i></li>
-                            {{end}}
-                            {{if .ReqFacebook}}
+                            <<<end>>>
+                            <<<if .ReqFacebook>>>
                             <li class="reqdrop" title="Facebook required"><i class="fab fa-facebook"></i></li>
-                            {{end}}
-                            {{if .ReqBitcointalk}}
+                            <<<end>>>
+                            <<<if .ReqBitcointalk>>>
                             <li class="reqdrop" title="Bitcointalk required"><i class="fab fa-bitcoin"></i></li>
-                            {{end}}
-                            {{if .ReqMedium}}
+                            <<<end>>>
+                            <<<if .ReqMedium>>>
                             <li class="reqdrop" title="Medium required"><i class="fab fa-medium"></i></li>
-                            {{end}}
-                            {{if .ReqEmail}}
+                            <<<end>>>
+                            <<<if .ReqEmail>>>
                             <li class="reqdrop" title="Mail required"><i class="fas fa-envelope"></i></li>
-                            {{end}}
+                            <<<end>>>
                           </ul>
                         </div>
                       </div>
                     </div>
                   </div>
-                  {{end}}
+                  <<<end>>>
                 </div>
               </div>
             </div>
@@ -154,47 +188,47 @@
             <div class="airdrop-scroll-wrapper">
               <div class="scrollWrap">
                 <div class="scrollContent">
-                  {{range .hotList}}
+                  <<<range .hotList>>>
                   <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
-                    <div class="inside-article" onclick="window.open('/d/{{.Id}}')">
+                    <div class="inside-article" onclick="window.open('/d/<<<.Id>>>')">
                       <div class="air-wrapper temperature-20">
                         <div class="droptemp">
                           <i class="fa fa-fire"></i>
-                          <span>{{.Temperature}}°</span>
+                          <span><<<.Temperature>>>°</span>
                         </div>
                         <div class="air-thumbnail">
-                          <img src="{{.Photo}}" alt="">
+                          <img src="<<<.Photo>>>" alt="">
                         </div>
                         <div class="air-content-front">
-                          <h3>{{.Name}}</h3>
+                          <h3><<<.Name>>></h3>
                           <ul class="front-drop-list">
-                            <li class="est-value"><i class="far fa-money-bill-alt"></i> 收益: <span>{{.EstimateValue}}</span></li>
+                            <li class="est-value"><i class="far fa-money-bill-alt"></i> 收益: <span><<<.EstimateValue>>></span></li>
                           </ul>
                           <ul class="req-drop-list">
-                            {{if .ReqTelegram}}
+                            <<<if .ReqTelegram>>>
                             <li class="reqdrop" title="Telegram required"><i class="fab fa-telegram-plane"></i></li>
-                            {{end}}
-                            {{if .ReqTwitter}}
+                            <<<end>>>
+                            <<<if .ReqTwitter>>>
                             <li class="reqdrop" title="Twitter required"><i class="fab fa-twitter"></i></li>
-                            {{end}}
-                            {{if .ReqFacebook}}
+                            <<<end>>>
+                            <<<if .ReqFacebook>>>
                             <li class="reqdrop" title="Facebook required"><i class="fab fa-facebook"></i></li>
-                            {{end}}
-                            {{if .ReqBitcointalk}}
+                            <<<end>>>
+                            <<<if .ReqBitcointalk>>>
                             <li class="reqdrop" title="Bitcointalk required"><i class="fab fa-bitcoin"></i></li>
-                            {{end}}
-                            {{if .ReqMedium}}
+                            <<<end>>>
+                            <<<if .ReqMedium>>>
                             <li class="reqdrop" title="Medium required"><i class="fab fa-medium"></i></li>
-                            {{end}}
-                            {{if .ReqEmail}}
+                            <<<end>>>
+                            <<<if .ReqEmail>>>
                             <li class="reqdrop" title="Mail required"><i class="fas fa-envelope"></i></li>
-                            {{end}}
+                            <<<end>>>
                           </ul>
                         </div>
                       </div>
                     </div>
                   </div>
-                  {{end}}
+                  <<<end>>>
                 </div>
               </div>
             </div>
@@ -203,4 +237,4 @@
       </div>
     </div>
   </div>
-  {{end}}
+  <<<end>>>

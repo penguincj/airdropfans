@@ -15,6 +15,9 @@ func init() {
 
 	//beego.Router("/meeting", &controllers.MeetingHandle{}, "*:Meeting")
 
+	// WebSocket.
+	beego.Router("/ws", &controllers.WebSocketController{})
+
 	///admin
 	admindir := beego.AppConfig.String("admindir")
 	if len(admindir) == 0 {

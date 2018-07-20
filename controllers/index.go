@@ -17,10 +17,10 @@ type IndexHandle struct {
 
 func (this *IndexHandle) Index() {
 	var (
-		info models.AirdropInfo
-		list []*models.AirdropInfo
-		hotList []*models.AirdropInfo
-		token models.TokenPrice
+		info      models.AirdropInfo
+		list      []*models.AirdropInfo
+		hotList   []*models.AirdropInfo
+		token     models.TokenPrice
 		tokenList []*models.TokenPrice
 	)
 
@@ -28,6 +28,7 @@ func (this *IndexHandle) Index() {
 	info.Query().OrderBy("-id").Limit(30, 0).All(&list)
 	info.Query().OrderBy("-temperature").Limit(30, 0).All(&hotList)
 
+	this.Data["market"] = list
 	this.Data["tokenList"] = tokenList
 	this.Data["list"] = list
 	this.Data["hotList"] = hotList
@@ -59,7 +60,7 @@ func (this *IndexHandle) Detail() {
 	}
 
 	info.Views++
-	info.Temperature  = info.Views * 3 + info.Vote * 5
+	info.Temperature = info.Views*3 + info.Vote*5
 
 	info.Update("views", "temperature")
 
