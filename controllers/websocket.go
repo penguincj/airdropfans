@@ -65,6 +65,18 @@ func (this *WebSocketController) HandleWs() {
 	}
 
 	client = append(client, ws)
+
+	data := getMarket()
+	sendWebSocket(ws, data)
+}
+
+func sendWebSocket(ws *websocket.Conn, d TransferData) {
+	data, err := json.Marshal(d)
+	if err != nil {
+		beego.Error("Fail to marshal event:", err)
+		return
+	}
+	ws.WriteMessage(websocket.TextMessage, data)
 }
 
 // broadcastWebSocket broadcasts messages to WebSocket users.
@@ -83,7 +95,7 @@ func broadcastWebSocket(d TransferData) {
 	}
 }
 
-func broadcastMarket() {
+func getMarket() TransferData {
 
 	var (
 		token     models.TokenPrice
@@ -103,15 +115,9 @@ func broadcastMarket() {
 	data := TransferData{
 		Type: "market",
 		Data: msg,
-		/*
-			Data: marketMsg{
-				Markets: tokenList,
-				Time:    time.Now().Format("2006-01-02 15:04:05"),
-			},
-		*/
 	}
 
-	broadcastWebSocket(data)
+	return data
 }
 
 func marketWs() {
@@ -123,7 +129,8 @@ func marketWs() {
 		select {
 		case <-t.C:
 			t.Reset(10 * time.Second)
-			broadcastMarket()
+			data := getMarket()
+			broadcastWebSocket(data)
 		}
 	}
 }

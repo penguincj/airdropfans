@@ -25,9 +25,9 @@
 
 <div>
   <div class="wrapper separate-containers margin-top-100 margin-bottom-100">
-    
     <div class="container">
       <div class="row">
+        <!--
         <div id="app">
         <ol>
           <li v-for="site in sites">
@@ -35,14 +35,14 @@
           </li>
         </ol>
       </div>
+      -->
 
-        <div class="airdrop-ticker" id="marketapp">
-          <ul>
-            <li v-for="market in markets">
-              <b>{{market.name}}</b> ${{ market.closes }} <span class="airdrop-ticker-percent {{ market.fluctuation }}">{{ market.floatpercent }}%  </span>
-            </li>
-          </ul>
-        </div>
+      <div class="airdrop-ticker" id="marketapp">
+        <ul>
+          <li v-for="market in markets">
+            <b>{{market.name}}</b> ${{ market.closes }} <span class="airdrop-ticker-percent {{ market.fluctuation }}">{{ market.floatpercent }}%  </span>
+          </li>
+        </ul>
       </div>
     </div>
      
