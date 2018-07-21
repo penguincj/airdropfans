@@ -21,7 +21,7 @@ var tempapp = new Vue({
     },
 });
 
-ws = new WebSocket('ws://localhost:80/' + 'temp' + window.location.pathname)
+ws = new WebSocket('ws://airdropfans.com/' + 'temp' + window.location.pathname)
 try {
     ws.onopen = function () {
     }

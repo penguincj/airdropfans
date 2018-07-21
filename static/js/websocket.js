@@ -1,15 +1,3 @@
-var app = new Vue({
-  el: '#app',
-  data: {
-    sites: [
-      { name: 'cj' },
-      { name: 'Google' },
-      { name: 'Taobao' }
-    ]
-  }
-});
-
-
 var marketapp = new Vue({
     el: '#marketapp',
     data: {
@@ -17,7 +5,7 @@ var marketapp = new Vue({
     },
 });
 
-ws = new WebSocket("ws://localhost:80/market")
+ws = new WebSocket("ws://airdropfans.com/market")
 try {
     ws.onopen = function () {
     }
