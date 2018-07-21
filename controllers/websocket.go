@@ -206,7 +206,7 @@ func handleTemperature(event models.Event) {
 		info.Vote++
 		info.Temperature = info.Views*3 + info.Vote*5
 		//info.Temperature = info.Temperature + 7
-		err = info.Update("name", "description", "cid", "estimate_value", "tokens_per_claim", "max_participants", "logo", "photo", "iphoto", "start_time", "end_time", "website", "permanent", "airdrop_addr", "total_value", "platform", "step_guide", "incentive_plan", "req_telegram", "req_twitter", "req_medium", "req_facebook", "req_bitcointalk", "req_email", "pre_sale_date", "bitcointalk_addr", "bounty_addr", "whitepaper_addr", "twitter_addr", "facebook_addr", "telegram_addr", "medium_addr", "github_addr", "status", "isnew", "seo_title", "seo_keywords", "seo_description", "views", "vote", "temperature")
+		err = info.Update("name", "description", "cid", "estimate_value", "tokens_per_claim", "max_participants", "logo", "photo", "iphoto", "start_time", "end_time", "website", "permanent", "airdrop_addr", "total_value", "platform", "step_guide", "incentive_plan", "req_telegram", "req_twitter", "req_medium", "req_facebook", "req_bitcointalk", "req_email", "pre_sale_date", "bitcointalk_addr", "bounty_addr", "whitepaper_addr", "twitter_addr", "facebook_addr", "telegram_addr", "medium_addr", "github_addr", "status", "isnew", "seo_title", "seo_keywords", "seo_description", "views", "vote", "temperature", "addtime")
 		if err != nil {
 			fmt.Printf("update airdrop %d failed due to temperature", info.Id)
 		}

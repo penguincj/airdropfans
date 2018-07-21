@@ -2713,3 +2713,29 @@ button, html input[type='button'], input[type='reset'], input[type='submit'], a.
     color: #f70404;
     background: #fff;
 }
+
+.new-flag .inside-article::after
+{
+    font-size: 12px;
+    position: absolute;
+    z-index: 10;
+    top: 15px;
+    right: -50px;
+
+    display: inline-block;
+
+    width: 200px;
+    padding: 5px 10px;
+
+    content: 'NEW';
+    transform: rotate(45deg);
+    text-align: center;
+
+    color: white;
+    background: #e13e3e;
+}
+.new-flag .inside-article
+{
+    overflow: hidden;
+}
+

@@ -1,17 +1,20 @@
 package models
 
 import (
+	"time"
+
 	"github.com/astaxie/beego/orm"
 )
 
 type AirdropInfo struct {
 	Id              int64
-	Name            string `orm:"size(500)"` //影片中文名称
-	Description     string `orm:"size(2000)"`
-	StepGuide       string `orm:"size(2000)"`
-	IncentivePlan   string `orm:"size(2000)"` // 激励说明
-	Cid             int64  //分类id
-	Cname           string //分类名称非数据库字段
+	Name            string    `orm:"size(500)"`
+	Description     string    `orm:"size(2000)"`
+	StepGuide       string    `orm:"size(2000)"`
+	IncentivePlan   string    `orm:"size(2000)"` // 激励说明
+	Cid             int64     //分类id
+	Cname           string    //分类名称非数据库字段
+	Addtime         time.Time `orm:"auto_now_add;type(datetime)"`
 	EstimateValue   string
 	TokensPerClaim  string
 	MaxParticipants string
@@ -50,7 +53,8 @@ type AirdropInfo struct {
 	SeoKeywords     string `orm:"size(500)"`  //seo关键字
 	SeoDescription  string `orm:"size(1000)"` //seo说明
 	Views           int64  //浏览量
-	Vote           int64  
+	Vote            int64
+	DisplayStatus   string
 }
 
 func (p *AirdropInfo) TableName() string {

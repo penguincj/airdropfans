@@ -3,6 +3,7 @@ package controllers
 import (
 	"strconv"
 	"strings"
+	"time"
 
 	"airdrop/models"
 )
@@ -27,6 +28,13 @@ func (this *IndexHandle) Index() {
 	token.Query().OrderBy("id").Limit(8, 0).All(&tokenList)
 	info.Query().OrderBy("-id").Limit(30, 0).All(&list)
 	info.Query().OrderBy("-temperature").Limit(30, 0).All(&hotList)
+
+	for _, airdrop := range list {
+		duringHours := time.Now().Sub(airdrop.Addtime).Hours()
+		if duringHours <= 48 {
+			airdrop.DisplayStatus = "new-flag"
+		}
+	}
 
 	this.Data["market"] = list
 	this.Data["tokenList"] = tokenList
@@ -64,14 +72,16 @@ func (this *IndexHandle) Detail() {
 
 	info.Update("views", "temperature")
 
+	duringHours := time.Now().Sub(info.Addtime).Hours()
+	if duringHours <= 48 {
+		info.DisplayStatus = "new-flag"
+	}
+
+	timestap := info.Addtime.Format("2006-01-02 15:04:05")
 	info.Description = strings.Replace(info.Description, "&nbsp;", "", -1)
 	this.Data["info"] = info
 	this.TplName = "_detail.html"
 	//this.TplName = "_airdrop_detial.html"
-}
-
-func (this *IndexHandle) OldDetail() {
-	this.TplName = "_airdrop_detail.html"
 }
 
 func (this *IndexHandle) New() {

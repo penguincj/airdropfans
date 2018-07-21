@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+	"time"
 
 	"airdrop/models"
 )
@@ -145,6 +146,7 @@ func (this *AirdropHandle) Save() {
 	info.Description = strings.TrimSpace(this.GetString("airdrop-desc"))
 	info.StepGuide = strings.TrimSpace(this.GetString("stepGuide"))
 	info.IncentivePlan = strings.TrimSpace(this.GetString("incentivePlan"))
+	info.Addtime = time.Now()
 
 	if len(info.Name) == 0 || len(info.Photo) == 0 || len(info.AirdropAddr) == 0 || len(info.EstimateValue) == 0 || len(info.Platform) == 0 || len(info.StartTime) == 0 || len(info.TotalValue) == 0 || len(info.TokensPerClaim) == 0 {
 		this.showmsg("带*号的为必须填写的内容...", this.admindir+"airdrop/edit/"+fmt.Sprintf("%d", id))
@@ -152,7 +154,7 @@ func (this *AirdropHandle) Save() {
 
 	if id > 0 {
 		info.Id = id
-		err = info.Update("name", "description", "cid", "estimate_value", "tokens_per_claim", "max_participants", "logo", "photo", "iphoto", "start_time", "end_time", "website", "permanent", "airdrop_addr", "total_value", "platform", "step_guide", "incentive_plan", "req_telegram", "req_twitter", "req_medium", "req_facebook", "req_bitcointalk", "req_email", "pre_sale_date", "bitcointalk_addr", "bounty_addr", "whitepaper_addr", "twitter_addr", "facebook_addr", "telegram_addr", "medium_addr", "github_addr", "status", "isnew", "seo_title", "seo_keywords", "seo_description", "views", "vote", "temperature")
+		err = info.Update("name", "description", "cid", "estimate_value", "tokens_per_claim", "max_participants", "logo", "photo", "iphoto", "start_time", "end_time", "website", "permanent", "airdrop_addr", "total_value", "platform", "step_guide", "incentive_plan", "req_telegram", "req_twitter", "req_medium", "req_facebook", "req_bitcointalk", "req_email", "pre_sale_date", "bitcointalk_addr", "bounty_addr", "whitepaper_addr", "twitter_addr", "facebook_addr", "telegram_addr", "medium_addr", "github_addr", "status", "isnew", "seo_title", "seo_keywords", "seo_description", "views", "vote", "temperature", "addtime")
 	} else {
 		err = info.Insert()
 	}

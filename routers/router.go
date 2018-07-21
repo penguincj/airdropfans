@@ -9,7 +9,6 @@ import (
 
 func init() {
 	beego.Router("/", &controllers.IndexHandle{}, "*:Index")
-	beego.Router("/detail", &controllers.IndexHandle{}, "*:OldDetail")
 	beego.Router("/d/:id:int/", &controllers.IndexHandle{}, "*:Detail")
 	beego.Router("/new", &controllers.IndexHandle{}, "*:New")
 
