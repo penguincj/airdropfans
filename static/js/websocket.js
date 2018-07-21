@@ -17,7 +17,7 @@ var marketapp = new Vue({
     },
 });
 
-ws = new WebSocket("ws://localhost:80/ws")
+ws = new WebSocket("ws://localhost:80/market")
 try {
     ws.onopen = function () {
     }

@@ -2,21 +2,24 @@ package models
 
 import (
 	"container/list"
+
+	"github.com/gorilla/websocket"
 )
 
 type EventType int
 
 const (
 	EVENT_MARKET = iota
-	EVENT_LEAVE
+	EVENT_TEMPERATURE
 	EVENT_MESSAGE
 )
 
 type Event struct {
 	Type      EventType // EVETNT_PRICE, LEAVE, MESSAGE
-	User      string
+	Id        int64
+	Conn      *websocket.Conn
 	Timestamp int // Unix timestamp (secs)
-	Content   string
+	Data      interface{}
 }
 
 const archiveSize = 20

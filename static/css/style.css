@@ -2696,3 +2696,20 @@ button, html input[type='button'], input[type='reset'], input[type='submit'], a.
     text-align: left;
 }
 
+.post-ratings button:first-child {
+    border: none;
+    position: absolute;
+    top: -25px;
+    left: 5px;
+    color: #69be28;
+    background: #fff;
+}
+
+.post-ratings button:last-child {
+    border: none;
+    position: absolute;
+    top: -25px;
+    right: 5px;
+    color: #f70404;
+    background: #fff;
+}

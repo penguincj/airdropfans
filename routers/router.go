@@ -16,7 +16,9 @@ func init() {
 	//beego.Router("/meeting", &controllers.MeetingHandle{}, "*:Meeting")
 
 	// WebSocket.
-	beego.Router("/ws", &controllers.WebSocketController{}, "*:HandleWs")
+	beego.Router("/market", &controllers.WebSocketController{}, "*:Market")
+	beego.Router("/temp/d/:id:int/", &controllers.WebSocketController{}, "*:Temperature")
+	//beego.Router("/temperature", &controllers.WebSocketController{}, "*:Temperature")
 	//beego.Router("/ws/test", &controllers.WebSocketController{}, "get:HandleWs")
 
 	///admin

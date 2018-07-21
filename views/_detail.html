@@ -29,11 +29,25 @@
                   <img class="airdrop-logo" src="<<<.info.Photo>>>" alt="">
                 </a>
                 <div class="airdrop-rating-temp-wrapper">
-                  <div class="airdrop-rating-temp">
-                    <div class="airdrop-rating-temp-single"><<<.info.Temperature>>>°</div>
+                  <div class="airdrop-rating-temp" id="tempapp">
+                    <!--
+                    <div id="app">
+                      <ol>
+                        <li v-for="site in sites">
+                          {{ site.name }}
+                        </li>
+                      </ol>
+                    </div>
+                    -->
+                    <div class="airdrop-rating-temp-single">{{temperature}}°</div>
                     <div id="post-ratings-12291" class="post-ratings" data-nonce="99bab63345">
-                      <img id="decrement-app" src="/static/img/rating_1_half.gif" alt="Cold" title="Cold">
-                      <img id="increment-app" src="/static/img/rating_2_off.gif" alt="Hot" title="Hot">
+
+                      <!--
+                      <img v-on:click="decrease_temp" id="decrement-app" src="/static/img/rating_1_half.gif" alt="Cold" title="Cold">
+                      <img v-on:click="increase_temp" id="increment-app" src="/static/img/rating_2_off.gif" alt="Hot" title="Hot">
+                      -->
+                      <button v-on:click.once="decrease_temp" id="decrement-app"><b>-</b></button>
+                      <button v-on:click.once="increase_temp" id="increment-app"><b>+</b></button>
                       <!--
                       <img id="increment-app" src="/static/img/rating_2_off.gif" alt="Hot" title="Hot" onmouseover="current_rating(12291, 2, 'Hot');" onmouseout="ratings_off(0.7, 1, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;">
                       -->
@@ -198,5 +212,7 @@
     </article>
   </div>
 </div>
+
+<script type="text/javascript" src="/static/js/detail.js"></script>
 
 <<<end>>>
