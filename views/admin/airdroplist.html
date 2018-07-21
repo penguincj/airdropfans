@@ -6,12 +6,12 @@
 <link href="/static/css/admin.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/static/js/jquery.min.js"></script>
 <script type="text/javascript">
-var cid = "{{.cid}}";
-var week = "{{.week}}";
-var done = "{{.done}}"
-var count = {{.count}};
-var status = "{{.status}}";
-var admindir = "{{$.admindir}}";
+var cid = "<<<.cid>>>";
+var week = "<<<.week>>>";
+var done = "<<<.done>>>"
+var count = <<<.count>>>;
+var status = "<<<.status>>>";
+var admindir = "<<<$.admindir>>>";
 $(function(){
   $("#cid").val(cid);
   $("#week").val(week);
@@ -69,9 +69,9 @@ function OverDownStar(a,b,c){
 		<td height="20">
     <select name="cid" id="cid" class="select">
       <option selected="selected" value="0">==所有分类==</option>
-      {{range .classlist}}
-      <option value="{{.Id}}">{{.Name}}</option>
-      {{end}}
+      <<<range .classlist>>>
+      <option value="<<<.Id>>>"><<<.Name>>></option>
+      <<<end>>>
     </select>
     <select name="week" id="week" class="select">
       <option selected="selected" value="0">==选择星期==</option>
@@ -94,7 +94,7 @@ function OverDownStar(a,b,c){
       <option value="1">推荐到热门</option>
       <option value="-1">隐藏状态</option>
     </select>  
-    <input type="text" name="keyword" id="keyword" class="input" value="{{.keyword}}" />
+    <input type="text" name="keyword" id="keyword" class="input" value="<<<.keyword>>>" />
     <input type="submit" name="enter" value=" 查询空投 " id="enter" class="button bghuang" />
     </td>
 		</tr>
@@ -108,15 +108,15 @@ function OverDownStar(a,b,c){
       <th width="20%" bgcolor="#ADE2F2"><div align="center">收益</div></th>
     </tr>
 	<tbody id="show">
-    {{range .list}}
+    <<<range .list>>>
     <tr>
-      <td height="30"><a href="/d/{{.Id}}/" target="_blank" style="margin-left:5px;">{{.Name}}</a></td>
-      <td><div align="center"><a href="{{$.admindir}}airdrop/edit/{{.Id}}/">修改</a></div></td>
-      <td><div align="center"><a href="{{$.admindir}}airdrop/delete/{{.Id}}/">删除</a></div></td>
-      <td><div align="center">{{.Website}}</div></td>
-      <td><div align="center">{{.EstimateValue}}</div></td>
+      <td height="30"><a href="/d/<<<.Id>>>/" target="_blank" style="margin-left:5px;"><<<.Name>>></a></td>
+      <td><div align="center"><a href="<<<$.admindir>>>airdrop/edit/<<<.Id>>>/">修改</a></div></td>
+      <td><div align="center"><a href="<<<$.admindir>>>airdrop/delete/<<<.Id>>>/">删除</a></div></td>
+      <td><div align="center"><<<.Website>>></div></td>
+      <td><div align="center"><<<.EstimateValue>>></div></td>
     </tr>
-    {{end}}
+    <<<end>>>
   </tbody>
   <tbody id="nodata" style="display:none;">
     <td  colspan="10" bgcolor="#ffffff">没有查询结果...</td>
@@ -124,7 +124,7 @@ function OverDownStar(a,b,c){
     <tr>
       <td height="30" colspan="10" bgcolor="#ffffff" align="left">
       <div class="pager">
-       {{str2html .pager}}
+       <<<str2html .pager>>>
         </div>
        </td>
     </tr>

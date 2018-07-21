@@ -17,7 +17,7 @@ func init() {
 	mysqlurls := beego.AppConfig.String("mysqlurls")
 	mysqldb := beego.AppConfig.String("mysqldb")
 	orm.RegisterModel(new(AirdropInfo), new(UserInfo))
-    orm.RegisterModel(new(TokenPrice))
+	orm.RegisterModel(new(TokenPrice))
 	orm.RegisterDriver("mysql", orm.DRMySQL)
 	orm.RegisterDataBase("default", "mysql", mysqluser+":"+mysqlpass+"@tcp("+mysqlurls+")/"+mysqldb+"?charset=utf8&loc=Asia%2FShanghai")
 	orm.RunSyncdb("default", false, true)
@@ -25,14 +25,14 @@ func init() {
 		orm.Debug = true
 	}
 
-/*
+	/*
 		user := &UserInfo{
 			Id:       0,
 			Username: "cj",
 			Password: Md5("cjadmin"),
 		}
 		user.Insert()
-*/
+	*/
 }
 
 func Md5(str string) string {

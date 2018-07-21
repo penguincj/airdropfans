@@ -10,10 +10,10 @@
 function prefixInteger(num, length) {
   return (num / Math.pow(10, length)).toFixed(length).substr(2);
 }
-var ep = {{.episode}};
-var admindir = '{{.AdminDir}}';
-var mid = {{.movie.Id}};
-var downlist = '{{.downlist}}';
+var ep = <<<.episode>>>;
+var admindir = '<<<.AdminDir>>>';
+var mid = <<<.movie.Id>>>;
+var downlist = '<<<.downlist>>>';
 
 function itemlist(){
   var obj = $.parseJSON(downlist);
@@ -55,9 +55,9 @@ function getep(){
   <table border="0" align="center" cellpadding="0" cellspacing="0" class="add">
     <tr>
       <td width="10%">影片名称：</td>
-      <td>{{.movie.Name}}</td>
+      <td><<<.movie.Name>>></td>
       <td>集数</td>
-      <td><input name="episode" type="number" id="episode" readonly="readonly" class="input" style="width:230px" placeholder="10" value="{{.movie.Episode}}" />＊</td>
+      <td><input name="episode" type="number" id="episode" readonly="readonly" class="input" style="width:230px" placeholder="10" value="<<<.movie.Episode>>>" />＊</td>
     </tr> 
     <tbody id="downlist">
       

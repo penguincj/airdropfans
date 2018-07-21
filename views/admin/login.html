@@ -8,19 +8,19 @@ body{background:#888 repeat left center;line-height:1;}
 </style>
 </head>
 <body>
-{{.Success}}
+<<<.Success>>>
 <form method="post" id="form1">
 <div id="login">
 	<ul>
 		<li><h2>username</h2></li>
-		<li><input name="username" type="text" id="tname" class="input" value="{{.username}}" style="width:380px" placeholder="" autocomplete="off" />
+		<li><input name="username" type="text" id="tname" class="input" value="<<<.username>>>" style="width:380px" placeholder="" autocomplete="off" />
         </li>
 		<li><h2>password</h2></li>
 		<li><input name="password" type="password" id="tpwd" class="input" style="width:380px" placeholder="" autocomplete="off" /></li>
 		<li>
         <input type="image" name="ImageButton1" id="ImageButton1" src="/static/img/login_button.gif" />
         </li>
-		<li><span id="info" class="info">{{.info}}</span></li>
+		<li><span id="info" class="info"><<<.info>>></span></li>
 	</ul>
 </div>
 </form>

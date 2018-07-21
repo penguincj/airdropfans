@@ -3,6 +3,7 @@ package controllers
 import (
 	"airdrop/models"
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"time"
 
@@ -29,7 +30,29 @@ type marketMsg struct {
 
 var client []*websocket.Conn
 
+func (this *WebSocketController) Get() {
+	fmt.Println("cj get")
+	// Safe check.
+	this.TplName = "_index.html"
+	this.Data["IsWebSocket"] = true
+	ws, err := websocket.Upgrade(this.Ctx.ResponseWriter, this.Ctx.Request, nil, 1024, 1024)
+	if _, ok := err.(websocket.HandshakeError); ok {
+		http.Error(this.Ctx.ResponseWriter, "Not a websocket handshake", 400)
+		return
+	} else if err != nil {
+		beego.Error("Cannot setup WebSocket connection:", err)
+		return
+	}
+
+	client = append(client, ws)
+
+}
+
 func (this *WebSocketController) HandleWs() {
+
+	fmt.Println("cj HandleWs")
+
+	this.TplName = "_index.html"
 
 	// Upgrade from http request to WebSocket.
 	ws, err := websocket.Upgrade(this.Ctx.ResponseWriter, this.Ctx.Request, nil, 1024, 1024)
@@ -46,6 +69,7 @@ func (this *WebSocketController) HandleWs() {
 
 // broadcastWebSocket broadcasts messages to WebSocket users.
 func broadcastWebSocket(d TransferData) {
+	fmt.Printf("data %+v \n", d)
 	data, err := json.Marshal(d)
 	if err != nil {
 		beego.Error("Fail to marshal event:", err)
@@ -68,11 +92,23 @@ func broadcastMarket() {
 
 	token.Query().OrderBy("id").Limit(8, 0).All(&tokenList)
 
+	var msg marketMsg
+	msg.Time = time.Now().Format("2006-01-02 15:04:05")
+	msg.Markets = make([]models.TokenPrice, 0, 8)
+
+	for _, t := range tokenList {
+		msg.Markets = append(msg.Markets, *t)
+	}
+
 	data := TransferData{
 		Type: "market",
-		Data: marketMsg{
-			Time: time.Now().Format("2006-01-02 15:04:05"),
-		},
+		Data: msg,
+		/*
+			Data: marketMsg{
+				Markets: tokenList,
+				Time:    time.Now().Format("2006-01-02 15:04:05"),
+			},
+		*/
 	}
 
 	broadcastWebSocket(data)
@@ -86,7 +122,7 @@ func marketWs() {
 	for {
 		select {
 		case <-t.C:
-			t.Reset(1 * time.Minute)
+			t.Reset(10 * time.Second)
 			broadcastMarket()
 		}
 	}

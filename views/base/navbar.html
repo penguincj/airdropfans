@@ -1,4 +1,4 @@
-<nav class="header fixed navbar navbar-fixed-top" {{if .IsBlack}} style="background-color:black;"{{end}}>
+<nav class="header fixed navbar navbar-fixed-top" <<<if .IsBlack>>> style="background-color:black;"<<<end>>>>
   <div class="container">
     <div class="row">
       <div class="col-md-3 col-xs-3">
@@ -33,11 +33,11 @@
                 </div>
                 <div class="collapse navbar-collapse tab-megamenu" id="navbar-collapse-1">
                   <ul class="nav navbar-nav navbar-right">
-                    <li {{if .IsHome}}class="active"{{end}}><a href="/"><i style="color:#FF0000" class="fa fa-fire"></i>最火空投</a></li>
-                    <li {{if .IsTutorial}}class="active"{{end}}><a href="/">教程</a></li>
+                    <li <<<if .IsHome>>>class="active"<<<end>>>><a href="/"><i style="color:#FF0000" class="fa fa-fire"></i>最火空投</a></li>
+                    <li <<<if .IsTutorial>>>class="active"<<<end>>>><a href="/">教程</a></li>
                     <!--
-                    <li {{if .IsNews}}class="active"{{end}}><a href="/"><i class="fa fa-fire"></i>最火</a></li>
-                    <li {{if .IsTechnology}}class="active"{{end}}><a href="/">区块链技术</a></li>
+                    <li <<<if .IsNews>>>class="active"<<<end>>>><a href="/"><i class="fa fa-fire"></i>最火</a></li>
+                    <li <<<if .IsTechnology>>>class="active"<<<end>>>><a href="/">区块链技术</a></li>
                     -->
                   </ul>
                 </div>

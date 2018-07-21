@@ -1,36 +1,36 @@
-{{template "base/base.html" .}}
+<<<template "base/base.html" .>>>
 
-{{define "meta"}}
+<<<define "meta">>>
 
 <meta name="description" content="Token 空投">
 <meta name="keywords" content="Token 空投" />
 <title>空投粉</title>
 
-{{end}}
+<<<end>>>
 
-{{define "head"}}
+<<<define "head">>>
 
 <link href="/static/css/app.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-{{end}}
+<<<end>>>
 
-{{define "body"}}
+<<<define "body">>>
 <div class="wrapper single margin-top-80 margin-bottom-50">
   <div class="container">
-    <h1>{{.info.Name}}</h1>
+    <h1><<<.info.Name>>></h1>
     <article id="post-9224" class="temperature-0 post-9224 airdrop type-airdrop status-publish has-post-thumbnail hentry" itemtype="http://schema.org/CreativeWork" itemscope="itemscope">
       <div class="inside-article  ">
         <div class="aidrop-info-wrapper">
           <div class="row">
             <div class="col-sm-6 col-md-4 col-lg-4">
               <div class="airdrop-logo-thumbnail">
-                <a href="{{.info.AirdropAddr}}" rel="nofollow" target="_blank">
-                  <img class="airdrop-logo" src="{{.info.Photo}}" alt="">
+                <a href="<<<.info.AirdropAddr>>>" rel="nofollow" target="_blank">
+                  <img class="airdrop-logo" src="<<<.info.Photo>>>" alt="">
                 </a>
                 <div class="airdrop-rating-temp-wrapper">
                   <div class="airdrop-rating-temp">
-                    <div class="airdrop-rating-temp-single">{{.info.Temperature}}°</div>
+                    <div class="airdrop-rating-temp-single"><<<.info.Temperature>>>°</div>
                     <div id="post-ratings-12291" class="post-ratings" data-nonce="99bab63345">
                       <img id="decrement-app" src="/static/img/rating_1_half.gif" alt="Cold" title="Cold">
                       <img id="increment-app" src="/static/img/rating_2_off.gif" alt="Hot" title="Hot">
@@ -47,26 +47,26 @@
                 <div class="airdrop-info">
                   <ul>
                     <li></li>
-                    <li><i class="far fa-calendar"></i> 空投开始时间: {{.info.StartTime}}</li>
-                    <li><i class="fas fa-sign-in-alt"></i> 空投链接: <a href="{{.info.AirdropAddr}}" target="_blank" rel="nofollow">前往空投页面</a></li>
-                    <li><i class="fa fa-stop-circle"></i> 空投总量: {{.info.TotalValue}}</li>
-                    <li><i class="fa fa-desktop"></i> 平台: {{.info.Platform}}</li>
+                    <li><i class="far fa-calendar"></i> 空投开始时间: <<<.info.StartTime>>></li>
+                    <li><i class="fas fa-sign-in-alt"></i> 空投链接: <a href="<<<.info.AirdropAddr>>>" target="_blank" rel="nofollow">前往空投页面</a></li>
+                    <li><i class="fa fa-stop-circle"></i> 空投总量: <<<.info.TotalValue>>></li>
+                    <li><i class="fa fa-desktop"></i> 平台: <<<.info.Platform>>></li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="col-sm-6 col-md-8 col-lg-8">
               <span class="drop-features">
-              {{str2html .info.Description}}
+              <<<str2html .info.Description>>>
               </span>
               <p></p>
               <div class="airdrop-guide">
                 <strong>获取糖果的步骤</strong>
                 <p>
-                {{str2html .info.StepGuide}}
+                <<<str2html .info.StepGuide>>>
                 </p>
                 <p>
-                {{str2html .info.IncentivePlan}}
+                <<<str2html .info.IncentivePlan>>>
                 </p>
               </div>
               <div class="airdrop-req">
@@ -74,7 +74,7 @@
                 <!-- Telegram -->
 
                 <div class="row">
-                  {{if .info.ReqTelegram}}
+                  <<<if .info.ReqTelegram>>>
                   <div class="aidrop-req-wrapper col-sm-6 col-md-4 col-lg-4">
                     <p class="aidrop-req-title"><i class="fab fa-telegram-plane"></i> Telegram</p>
                     <!--
@@ -84,10 +84,10 @@
                         </ul>
                         -->
                   </div>
-                  {{end}}
+                  <<<end>>>
                   <!-- End Telegram -->
                   <!-- Twitter -->
-                  {{if .info.ReqTwitter}}
+                  <<<if .info.ReqTwitter>>>
                   <div class="aidrop-req-wrapper col-sm-6 col-md-4 col-lg-4">
                     <p class="aidrop-req-title"><i class="fab fa-twitter"></i> Twitter</p>
                     <!--
@@ -96,28 +96,28 @@
                         </ul>
                         -->
                   </div>
-                  {{end}}
+                  <<<end>>>
                   <!-- End Twitter -->
                   <!-- Reddit -->
                   <!-- End Reddit -->
                   <!-- Medium -->
-                  {{if .info.ReqMedium}}
+                  <<<if .info.ReqMedium>>>
                   <div class="aidrop-req-wrapper col-sm-6 col-md-4 col-lg-4">
                     <p class="aidrop-req-title"><i class="fab fa-medium"></i> Medium</p>
                   </div>
-                  {{end}}
+                  <<<end>>>
                   <!-- End Medium -->
                   <!-- LinkedIn -->
                   <!-- End LinkedIn -->
                   <!-- Facebook -->
-                  {{if .info.ReqFacebook}}
+                  <<<if .info.ReqFacebook>>>
                   <div class="aidrop-req-wrapper col-sm-6 col-md-4 col-lg-4">
                     <p class="aidrop-req-title"><i class="fab fa-facebook"></i> Facebook</p>
                   </div>
-                  {{end}}
+                  <<<end>>>
                   <!-- End Facebook -->
                   <!-- Bitcointalk -->
-                  {{if .info.ReqBitcointalk}}
+                  <<<if .info.ReqBitcointalk>>>
                   <div class="aidrop-req-wrapper col-sm-6 col-md-4 col-lg-4">
                     <p class="aidrop-req-title"><i class="fab fa-bitcoin"></i> Bitcointalk</p>
                     <!--
@@ -126,7 +126,7 @@
                         </ul>
                         -->
                   </div>
-                  {{end}}
+                  <<<end>>>
                   <!-- End Bitcointalk -->
                   <!-- phone -->
                   <!-- End phone -->
@@ -135,11 +135,11 @@
                   <!-- End LinkedIn -->
                   <!-- kyc phone -->
                   <!-- email -->
-                  {{if .info.ReqEmail}}
+                  <<<if .info.ReqEmail>>>
                   <div class="aidrop-req-wrapper col-sm-6 col-md-4 col-lg-4">
                     <p class="aidrop-req-title"><i class="fas fa-envelope"></i> E-Mail</p>
                   </div>
-                  {{end}}
+                  <<<end>>>
                   <!-- End email -->
 
                   <div class="special-reqs">
@@ -152,7 +152,7 @@
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
             <div class="airdrop-conv">
-              <p><a class="claim-airdrop button outline" href="{{.info.AirdropAddr}}" target="_blank" rel="nofollow">参加空投 <i class="fas fa-sign-in-alt"></i></a></p>
+              <p><a class="claim-airdrop button outline" href="<<<.info.AirdropAddr>>>" target="_blank" rel="nofollow">参加空投 <i class="fas fa-sign-in-alt"></i></a></p>
             </div>
             <div class="exclusive-info text-center">
               <!--
@@ -170,14 +170,14 @@
           <div class="col-sm-6 col-md-4 col-lg-4 text-center border-right">
             <h3>预估收益</h3>
             <p class="score-value">
-            {{.info.EstimateValue}}
+            <<<.info.EstimateValue>>>
             </p>
           </div>
 
           <div class="col-sm-6 col-md-4 col-lg-4 text-center">
             <h3>参与可得代币</h3>
             <p class="score-value">
-            {{.info.TokensPerClaim}}
+            <<<.info.TokensPerClaim>>>
             </p>
           </div>
 
@@ -185,12 +185,12 @@
             <h3>最大参与人数</h3>
             <p class="score-value">
 
-            {{$len := len .info.MaxParticipants}}
-            {{if eq $len 0}}    
+            <<<$len := len .info.MaxParticipants>>>
+            <<<if eq $len 0>>>    
                 未知
-            {{else}}    
-                {{.info.MaxParticipants}}
-            {{end}} 
+            <<<else>>>    
+                <<<.info.MaxParticipants>>>
+            <<<end>>> 
             </p>
           </div>
         </div>
@@ -199,4 +199,4 @@
   </div>
 </div>
 
-{{end}}
+<<<end>>>
