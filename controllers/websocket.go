@@ -81,7 +81,6 @@ func sendWebSocket(ws *websocket.Conn, d TransferData) {
 
 // broadcastWebSocket broadcasts messages to WebSocket users.
 func broadcastWebSocket(d TransferData) {
-	fmt.Printf("data %+v \n", d)
 	data, err := json.Marshal(d)
 	if err != nil {
 		beego.Error("Fail to marshal event:", err)
@@ -128,7 +127,7 @@ func marketWs() {
 	for {
 		select {
 		case <-t.C:
-			t.Reset(10 * time.Second)
+			t.Reset(1 * time.Minute)
 			data := getMarket()
 			broadcastWebSocket(data)
 		}
