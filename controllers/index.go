@@ -77,7 +77,6 @@ func (this *IndexHandle) Detail() {
 		info.DisplayStatus = "new-flag"
 	}
 
-	timestap := info.Addtime.Format("2006-01-02 15:04:05")
 	info.Description = strings.Replace(info.Description, "&nbsp;", "", -1)
 	this.Data["info"] = info
 	this.TplName = "_detail.html"
