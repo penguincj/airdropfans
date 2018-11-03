@@ -31,7 +31,7 @@ func (this *IndexHandle) Index() {
 
 	for _, airdrop := range list {
 		duringHours := time.Now().Sub(airdrop.Addtime).Hours()
-		if duringHours <= 48 {
+		if duringHours <= 548 {
 			airdrop.DisplayStatus = "new-flag"
 		}
 	}
@@ -73,7 +73,7 @@ func (this *IndexHandle) Detail() {
 	info.Update("views", "temperature")
 
 	duringHours := time.Now().Sub(info.Addtime).Hours()
-	if duringHours <= 48 {
+	if duringHours <= 548 {
 		info.DisplayStatus = "new-flag"
 	}
 

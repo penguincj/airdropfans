@@ -141,7 +141,7 @@
                   <<<range .list>>>
                   <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop <<<.DisplayStatus>>>">
                     <div class="inside-article" onclick="window.open('/d/<<<.Id>>>')">
-                      <div class="air-wrapper temperature-20">
+                      <div class="air-wrapper">
                         <div class="air-thumbnail">
                           <img src="<<<.Photo>>>" alt="">
                         </div>
@@ -182,51 +182,25 @@
           <div class="col-sm-6 col-md-2 col-lg-2">
           </div>
           <div class="col-sm-6 col-md-5 col-lg-5">
-            <h2>最火空投</h2>
+            <h2>Dapp</h2>
             <div class="airdrop-scroll-wrapper">
               <div class="scrollWrap">
                 <div class="scrollContent">
-                  <<<range .hotList>>>
                   <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
-                    <div class="inside-article" onclick="window.open('/d/<<<.Id>>>')">
-                      <div class="air-wrapper temperature-20">
-                        <div class="droptemp">
-                          <i class="fa fa-fire"></i>
-                          <span><<<.Temperature>>>°</span>
-                        </div>
+                    <div class="inside-article" onclick="window.open('/dapp/casino')">
+                      <div class="air-wrapper">
                         <div class="air-thumbnail">
-                          <img src="<<<.Photo>>>" alt="">
+                          <img src="/static/img/dapp/casino.jpeg" alt="">
                         </div>
                         <div class="air-content-front">
-                          <h3><<<.Name>>></h3>
+                          <h3>押宝游戏</h3>
                           <ul class="front-drop-list">
-                            <li class="est-value"><i class="far fa-money-bill-alt"></i> 收益: <span><<<.EstimateValue>>></span></li>
-                          </ul>
-                          <ul class="req-drop-list">
-                            <<<if .ReqTelegram>>>
-                            <li class="reqdrop" title="Telegram required"><i class="fab fa-telegram-plane"></i></li>
-                            <<<end>>>
-                            <<<if .ReqTwitter>>>
-                            <li class="reqdrop" title="Twitter required"><i class="fab fa-twitter"></i></li>
-                            <<<end>>>
-                            <<<if .ReqFacebook>>>
-                            <li class="reqdrop" title="Facebook required"><i class="fab fa-facebook"></i></li>
-                            <<<end>>>
-                            <<<if .ReqBitcointalk>>>
-                            <li class="reqdrop" title="Bitcointalk required"><i class="fab fa-bitcoin"></i></li>
-                            <<<end>>>
-                            <<<if .ReqMedium>>>
-                            <li class="reqdrop" title="Medium required"><i class="fab fa-medium"></i></li>
-                            <<<end>>>
-                            <<<if .ReqEmail>>>
-                            <li class="reqdrop" title="Mail required"><i class="fas fa-envelope"></i></li>
-                            <<<end>>>
+                            <li class="est-value"><i class="far fa-money-bill-alt"></i> 收益: <span>1赔8</span></li>
                           </ul>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <<<end>>>
                 </div>
               </div>
             </div>
