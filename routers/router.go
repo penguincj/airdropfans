@@ -17,6 +17,8 @@ func init() {
 	beego.Router("/insurance", &controllers.DappHandle{}, "*:Insurance")
 	beego.Router("/signin", &controllers.DappHandle{}, "*:Signin")
 
+	beego.Router("/me", &controllers.LoveHandle{}, "*:LoveDetail")
+
 	//beego.Router("/meeting", &controllers.MeetingHandle{}, "*:Meeting")
 
 	// WebSocket.

@@ -2471,11 +2471,23 @@ button, html input[type='button'], input[type='reset'], input[type='submit'], a.
 .inside-article p {
     margin-bottom: 1em;
 }
+.drop-features p {
+    margin-left: 1em;
+}
 .report-wrapper {
     margin-top: 15px;
     text-align: center;
     color: #818181;
 }
+
+.airdrop-guide ul {
+    margin-left: 2em;
+}              
+
+.airdrop-guide p {
+    margin-left: 1em;
+}              
+
 .Dropdown {
     overflow: hidden;
     width: 325px;
@@ -2744,4 +2756,9 @@ button, html input[type='button'], input[type='reset'], input[type='submit'], a.
 }
 .app-on{
     width:100%;
+}
+
+.icon-pic {
+    height: 5px;
+    width: 5px;
 }
