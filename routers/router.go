@@ -12,6 +12,11 @@ func init() {
 	beego.Router("/d/:id:int/", &controllers.IndexHandle{}, "*:Detail")
 	beego.Router("/new", &controllers.IndexHandle{}, "*:New")
 
+	beego.Router("/casino", &controllers.DappHandle{}, "*:Casino")
+	beego.Router("/love", &controllers.DappHandle{}, "*:Love")
+	beego.Router("/insurance", &controllers.DappHandle{}, "*:Insurance")
+	beego.Router("/signin", &controllers.DappHandle{}, "*:Signin")
+
 	//beego.Router("/meeting", &controllers.MeetingHandle{}, "*:Meeting")
 
 	// WebSocket.

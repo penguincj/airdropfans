@@ -2626,7 +2626,7 @@ button, html input[type='button'], input[type='reset'], input[type='submit'], a.
     padding: 10px;
 }
 .rotation-slider-headline {
-    font-size: 12px;
+    font-size: 16px;
     font-weight: bold;
 }
 .item .rotation-slider-short {
@@ -2668,15 +2668,14 @@ button, html input[type='button'], input[type='reset'], input[type='submit'], a.
 .airdrop-rating-temp {
     position: relative;
     display: inline-block;
-    width: 120px;
+    width: 150px;
     height: 40px;
     padding: 5px 10px;
     border: 1px solid #d1d5db;
     border-radius: 10px;
 }
 .airdrop-rating-temp-single {
-    font-size: 30px;
-    font-size: 20px;
+    font-size: 1.3em;
     font-weight: bold;
     display: block;
     text-align: center;
@@ -2739,3 +2738,10 @@ button, html input[type='button'], input[type='reset'], input[type='submit'], a.
     overflow: hidden;
 }
 
+@media screen and (max-width:768px) {
+.small_non_display {
+	display:none;
+}
+.app-on{
+    width:100%;
+}

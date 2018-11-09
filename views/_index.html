@@ -10,7 +10,7 @@
 
 <<<define "head">>>
 
-<link href="/static/css/app.css" rel="stylesheet">
+<link href="/static/css/app1.css" rel="stylesheet">
 <meta name="baidu-site-verification" content="05jjSGn8um" />
 <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
 <!--
@@ -27,76 +27,47 @@
   <div class="wrapper separate-containers margin-top-100 margin-bottom-100">
     <div class="container">
       <div class="row">
-        <!--
-        <div id="app">
-        <ol>
-          <li v-for="site in sites">
-            {{ site.name }}
-          </li>
-        </ol>
-      </div>
-      -->
 
       <div class="airdrop-ticker" id="marketapp">
         <ul>
           <li v-for="market in markets">
-            <!--
-            <b>{{market.name}}</b> ${{ market.closes }} <span class="airdrop-ticker-percent {{ market.fluctuation }}">{{ market.floatpercent }}%  </span>
-            -->
             <b>{{market.name}}</b> ${{ market.closes }} <span class="airdrop-ticker-percent" v-bind:class="market.fluctuation">{{ market.floatpercent }}%  </span>
           </li>
         </ul>
       </div>
     </div>
      
-    <!--
-    <div class="container">
-      <div class="row">
-        <div class="airdrop-ticker">
-          <ul>
-            <<<range .tokenList>>>
-            <li>
-              <b><<<.Name>>></b> $<<<.CloseS>>> <span class="airdrop-ticker-percent <<<.Fluctuation>>>"><<<.FloatPercent>>>%  </span>
-            </li>
-            <<<end>>>
-          </ul>
-        </div>
-      </div>
-    </div>
-    -->
-
-
       <div class="container" style="visibility: visible; height: 150px;">
         <div class="row">
-          <div class="col-sm-12 col-md-3 col-lg-3">
+          <div class="col-sm-12 col-md-3 col-lg-3 margin-bottom-10">
             <div class="owl-item">
-              <a href="http://airdropfans.com/d/5">
-                <div class="item" style="background-image:url(http://airdropfans.com/static/img/banner/superbloom-rotating.png)">
+              <a href="http://airdropfans.com/casino">
+                <div class="item" style="background-image:url(http://airdropfans.com/static/img/bet.jpg)">
                   <div class="rotation-slider-content">
                     <div class="rotation-slider-content-inside">
-                      <div class="rotation-slider-headline">Superbloom Airdrop</div>
-                      <div class="rotation-slider-short">注册即得50 SEED，推荐得50 SEED</div>
+                      <div class="rotation-slider-headline">押宝游戏</div>
+                      <div class="rotation-slider-short">公平公正，返奖率高达90%</div>
                     </div>
                   </div>
                 </div>
               </a>
             </div>
           </div>
-          <div class="col-sm-12 col-md-3 col-lg-3">
+          <div class="col-sm-12 col-md-3 col-lg-3 small_non_display ">
             <div class="owl-item">
-              <a href="http://airdropfans.com/d/4">
-                <div class="item" style="background-image:url(http://airdropfans.com/static/img/banner/prime-rotating.png)">
+              <a href="http://airdropfans.com/love">
+                <div class="item" style="background-image:url(http://airdropfans.com/static/img/love.jpg)">
                   <div class="rotation-slider-content">
                     <div class="rotation-slider-content-inside">
-                      <div class="rotation-slider-headline">Prime Airdrop</div>
-                      <div class="rotation-slider-short">做任务获得500 PRIME，推荐得50 PRIME </div>
+                      <div class="rotation-slider-headline">区块恋</div>
+                      <div class="rotation-slider-short">恋爱记录在链，你敢吗？ </div>
                     </div>
                   </div>
                 </div>
               </a>
             </div>
           </div>
-          <div class="col-sm-12 col-md-3 col-lg-3">
+          <div class="col-sm-12 col-md-3 col-lg-3 small_non_display">
             <div class="owl-item cloned" style="width: 270px; margin-right: 10px;">
               <a href="http://airdropfans.com/d/4">
                 <div class="item" style="background-image:url(http://airdropfans.com/static/img/banner/nextpakk_rotating.png)">
@@ -110,7 +81,7 @@
               </a>
             </div>
           </div>
-          <div class="col-sm-12 col-md-3 col-lg-3">
+          <div class="col-sm-12 col-md-3 col-lg-3 small_non_display">
             <div class="owl-item">
               <a href="http://airdropfans.com">
                 <div class="item" style="background-image:url(http://airdropfans.com/static/img/banner/meeting.png)">
@@ -133,7 +104,91 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-sm-6 col-md-5 col-lg-5">
+          <div class="col-sm-6 col-md-4 col-lg-4">
+            <h2>Dapp</h2>
+            <div class="airdrop-scroll-wrapper">
+              <div class="scrollWrap">
+                <div class="scrollContent">
+                  <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
+                    <div class="inside-article" onclick="window.open('/casino')">
+                      <div class="air-wrapper">
+                        <div class="air-thumbnail">
+                          <img src="/static/img/dapp/saizi.jpeg" alt="">
+                        </div>
+                        <div class="air-content-front">
+                          <h3>押宝游戏</h3>
+                          <ul class="front-drop-list">
+                            <li> 玩法简单，安装Metamask即可投注。</li>
+                            <br>
+                            <li class="est-value"><i class="far fa-money-bill-alt"></i> 收益: <span>返奖率90%</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                     
+                  <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
+                    <div class="inside-article" onclick="window.open('/love')">
+                      <div class="air-wrapper">
+                        <div class="air-thumbnail">
+                          <img src="/static/img/dapp/love.jpeg" alt="">
+                        </div>
+                        <div class="air-content-front">
+                          <h3>区块恋</h3>
+                          <ul class="front-drop-list">
+                            <li>基于区块链的爱情合约</li>
+                            <br>
+                            <li class="est-value"><i class="far fa-money-bill-alt"></i> 收益: <span>找个好老婆，收益无限啊！！！</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
+                    <div class="inside-article" onclick="window.open('/signin')">
+                      <div class="air-wrapper">
+                        <div class="air-thumbnail">
+                          <img src="/static/img/time.png" alt="">
+                        </div>
+                        <div class="air-content-front">
+                          <h3>签到</h3>
+                          <ul class="front-drop-list">
+                            <li> 早起有钱赚</li>
+                            <br>
+                            <li class="est-value"><i class="far fa-money-bill-alt"></i> 收益: <span>起的越早越赚钱！！！</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
+                    <div class="inside-article" onclick="window.open('/insurance')">
+                      <div class="air-wrapper">
+                        <div class="air-thumbnail">
+                          <img src="/static/img/insurance.png" alt="">
+                        </div>
+                        <div class="air-content-front">
+                          <h3>相互保</h3>
+                          <ul class="front-drop-list">
+                            <li> 基于区块链的保险平台</li>
+                            <br>
+                            <li class="est-value"><i class="far fa-money-bill-alt"></i> 收益: <span>你帮我，我帮你！！！</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                   
+                  
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4">
             <h2>最新空投</h2>
             <div class="airdrop-scroll-wrapper">
               <div class="scrollWrap">
@@ -179,28 +234,53 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-md-2 col-lg-2">
-          </div>
-          <div class="col-sm-6 col-md-5 col-lg-5">
-            <h2>Dapp</h2>
+
+          <div class="col-sm-6 col-md-4 col-lg-4">
+            <h2>最火空投</h2>
             <div class="airdrop-scroll-wrapper">
               <div class="scrollWrap">
                 <div class="scrollContent">
+                  <<<range .hotList>>>
                   <div class="new-card grid-33 airdrop-click airdrop-hover airdrop type-airdrop">
-                    <div class="inside-article" onclick="window.open('/dapp/casino')">
-                      <div class="air-wrapper">
+                    <div class="inside-article" onclick="window.open('/d/<<<.Id>>>')">
+                      <div class="air-wrapper temperature-20">
+                        <div class="droptemp">
+                          <i class="fa fa-fire"></i>
+                          <span><<<.Temperature>>>°</span>
+                        </div>
                         <div class="air-thumbnail">
-                          <img src="/static/img/dapp/casino.jpeg" alt="">
+                          <img src="<<<.Photo>>>" alt="">
                         </div>
                         <div class="air-content-front">
-                          <h3>押宝游戏</h3>
+                          <h3><<<.Name>>></h3>
                           <ul class="front-drop-list">
-                            <li class="est-value"><i class="far fa-money-bill-alt"></i> 收益: <span>1赔8</span></li>
+                            <li class="est-value"><i class="far fa-money-bill-alt"></i> 收益: <span><<<.EstimateValue>>></span></li>
+                          </ul>
+                          <ul class="req-drop-list">
+                            <<<if .ReqTelegram>>>
+                            <li class="reqdrop" title="Telegram required"><i class="fab fa-telegram-plane"></i></li>
+                            <<<end>>>
+                            <<<if .ReqTwitter>>>
+                            <li class="reqdrop" title="Twitter required"><i class="fab fa-twitter"></i></li>
+                            <<<end>>>
+                            <<<if .ReqFacebook>>>
+                            <li class="reqdrop" title="Facebook required"><i class="fab fa-facebook"></i></li>
+                            <<<end>>>
+                            <<<if .ReqBitcointalk>>>
+                            <li class="reqdrop" title="Bitcointalk required"><i class="fab fa-bitcoin"></i></li>
+                            <<<end>>>
+                            <<<if .ReqMedium>>>
+                            <li class="reqdrop" title="Medium required"><i class="fab fa-medium"></i></li>
+                            <<<end>>>
+                            <<<if .ReqEmail>>>
+                            <li class="reqdrop" title="Mail required"><i class="fas fa-envelope"></i></li>
+                            <<<end>>>
                           </ul>
                         </div>
                       </div>
                     </div>
                   </div>
+                  <<<end>>>
                 </div>
               </div>
             </div>

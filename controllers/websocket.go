@@ -39,7 +39,6 @@ func newEvent(ep models.EventType, id int64, conn *websocket.Conn, data Transfer
 }
 
 func (this *WebSocketController) Get() {
-	fmt.Println("cj get")
 	// Safe check.
 	this.TplName = "_index.html"
 	this.Data["IsWebSocket"] = true
@@ -53,12 +52,9 @@ func (this *WebSocketController) Get() {
 	}
 
 	client = append(client, ws)
-
 }
 
 func (this *WebSocketController) Market() {
-
-	fmt.Println("cj HandleWs")
 
 	this.TplName = "_index.html"
 
@@ -76,7 +72,6 @@ func (this *WebSocketController) Market() {
 
 	data := getMarket()
 	sendWebSocket(ws, data)
-
 }
 
 func sendWebSocket(ws *websocket.Conn, d TransferData) {
@@ -97,7 +92,13 @@ func broadcastWebSocket(d TransferData) {
 	}
 
 	for i, ws := range client {
-		if ws.WriteMessage(websocket.TextMessage, data) != nil {
+		err = ws.WriteMessage(websocket.TextMessage, data)
+		if err != nil {
+			fmt.Printf("send ws failed, i %d len %d err: %s\n", i, len(client), err)
+			if i >= len(client) {
+				client = client[:0]
+				return
+			}
 			client = append(client[:i], client[i+1:]...)
 		}
 	}
@@ -149,8 +150,6 @@ func sendTemperature(ws *websocket.Conn, id int64) {
 }
 
 func (this *WebSocketController) Temperature() {
-
-	fmt.Println("cj tem")
 
 	this.TplName = "_detail.html"
 
