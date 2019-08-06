@@ -1143,22 +1143,6 @@ img.scroll-icon {
 .dropdown .right-on{
 	float:right;
     }
-.store #carousele{
-	display:none;
-}
-.app-on{
-    width:100%;
-    
-}
-.store{
-    width:100%;
-    top:-96px;
-    bottom:0;
-    }
-.dropdown .glyphicon{
-    float:right;
-    position: relative;
-    } 
 .service-block p,
 .service-block h5{
 	margin-left:35%; 
@@ -2471,6 +2455,9 @@ button, html input[type='button'], input[type='reset'], input[type='submit'], a.
 .inside-article p {
     margin-bottom: 1em;
 }
+.airdrop-req p {
+    margin-left: 1em;
+}
 .drop-features p {
     margin-left: 1em;
 }
@@ -2758,7 +2745,3 @@ button, html input[type='button'], input[type='reset'], input[type='submit'], a.
     width:100%;
 }
 
-.icon-pic {
-    height: 5px;
-    width: 5px;
-}

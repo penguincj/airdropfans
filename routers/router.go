@@ -18,6 +18,10 @@ func init() {
 	beego.Router("/signin", &controllers.DappHandle{}, "*:Signin")
 
 	beego.Router("/me", &controllers.LoveHandle{}, "*:LoveDetail")
+	beego.Router("/me/question", &controllers.LoveHandle{}, "*:Question")
+
+  	beego.Router("/me/message", &controllers.ContactSubmitController{})
+
 
 	//beego.Router("/meeting", &controllers.MeetingHandle{}, "*:Meeting")
 

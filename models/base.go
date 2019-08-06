@@ -24,15 +24,6 @@ func init() {
 	if beego.AppConfig.String("runmode") == "dev" {
 		orm.Debug = true
 	}
-
-	/*
-		user := &UserInfo{
-			Id:       0,
-			Username: "cj",
-			Password: Md5("cjadmin"),
-		}
-		user.Insert()
-	*/
 }
 
 func Md5(str string) string {

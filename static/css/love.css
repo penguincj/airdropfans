@@ -1,0 +1,14 @@
+.contact-me {
+    text-align: center;
+}
+
+#frmContactProfessional_1 {
+   margin-left: 33%; 
+}
+
+@media  (max-width:400px) {
+    #frmContactProfessional_1 {
+        margin-left: 0%; 
+    }
+}
+ 
